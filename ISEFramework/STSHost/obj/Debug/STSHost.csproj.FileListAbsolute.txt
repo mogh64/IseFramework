@@ -1,0 +1,6 @@
+E:\ISECollection\ISEFramework\STSHost\obj\Debug\STSHost.csprojResolveAssemblyReference.cache
+E:\ISECollection\ISEFramework\STSRelease\STSHost.exe.config
+E:\ISECollection\ISEFramework\STSRelease\STSHost.exe
+E:\ISECollection\ISEFramework\STSRelease\STSHost.pdb
+E:\ISECollection\ISEFramework\STSHost\obj\Debug\STSHost.exe
+E:\ISECollection\ISEFramework\STSHost\obj\Debug\STSHost.pdb

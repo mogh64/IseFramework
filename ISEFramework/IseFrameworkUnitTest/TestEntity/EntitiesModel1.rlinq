@@ -1,0 +1,239 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DomainModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="2.0.0.0" name="EntitiesModel1" namespace="IseFrameworkUnitTest" showPropertiesCompartment="true" xmlns="http://www.telerik.com/ORM">
+  <orm:orm name="EntitiesModel1" backend="oracle" default-schema="ISEFILING" xmlns:orm="http://tempuri.org/ORM">
+    <orm:namespace name="IseFrameworkUnitTest" default="true">
+      <orm:class name="CsOrderitem" uniqueId="f8d9bd9e-cac3-4e85-9fad-e488e7840571">
+        <orm:table name="CS_ORDERITEM" />
+        <orm:identity>
+          <orm:single-field field-name="_orderitemid" />
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="_orderitemid" property="OrderitemId" behavior="readwrite" uniqueId="940f6f8c-4590-4ccb-a409-b0950868c0db" type="System.Int64">
+          <orm:column name="ORDERITEM_ID" sql-type="NUMBER" nullable="false" length="20" scale="0" primary-key="true" ado-type="Decimal" />
+        </orm:field>
+        <orm:field name="_title" property="Title" behavior="readwrite" uniqueId="1797c1b4-9e90-470a-81f7-566647c6c158" type="System.String">
+          <orm:column name="TITLE" sql-type="NVARCHAR2" nullable="true" length="255" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_orderid" property="OrderId" behavior="readwrite" uniqueId="be6be29f-59bb-4165-a8b6-92df30520d83" type="System.Nullable`1[[System.Int64, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="ORDER_ID" sql-type="NUMBER" nullable="true" length="20" scale="0" ado-type="Decimal" />
+        </orm:field>
+        <orm:field name="_id" property="Id" behavior="readwrite" uniqueId="741b8f94-7c5d-4b9a-aa0f-82739e6a0c9a" type="System.Nullable`1[[System.Int64, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="ID" sql-type="NUMBER" nullable="true" length="20" scale="0" ado-type="Decimal" />
+        </orm:field>
+        <orm:field name="_csorder" property="Csorder" behavior="readwrite" uniqueId="c5cbac82-fc0e-438f-9263-9887421b40a8" type="IseFrameworkUnitTest.CsOrder">
+          <orm:reference uniqueId="679e4db3-decc-45e3-833b-d1e26bc3dbd4" association-name="CsOrderitemHasCsOrder">
+            <orm:sharedfield name="_orderid" target-class="IseFrameworkUnitTest.CsOrder" target-field="_orderid" />
+            <orm:constraint name="FK7D2C21AB3A41451B" delete-action="dbdefaultrule" destination-table="CS_ORDER" />
+          </orm:reference>
+        </orm:field>
+      </orm:class>
+      <orm:class name="CsOrder" uniqueId="b4721c27-42de-4fb5-b7f2-93ef8d1fd510">
+        <orm:table name="CS_ORDER" />
+        <orm:identity>
+          <orm:single-field field-name="_orderid" />
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="_orderid" property="OrderId" behavior="readwrite" uniqueId="90cd701f-8a61-4582-ac14-e4eb319f962d" type="System.Int64">
+          <orm:column name="ORDER_ID" sql-type="NUMBER" nullable="false" length="20" scale="0" primary-key="true" ado-type="Decimal" />
+        </orm:field>
+        <orm:field name="_amount" property="Amount" behavior="readwrite" uniqueId="012732a2-9fbd-496a-bbd0-09d146e53edf" type="System.Nullable`1[[System.Int64, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="AMOUNT" sql-type="NUMBER" nullable="true" length="10" scale="0" ado-type="Decimal" />
+        </orm:field>
+        <orm:field name="_orderdate" property="OrderDate" behavior="readwrite" uniqueId="19d04ec9-2be2-425c-bb48-d258d39c8c66" type="System.Nullable`1[[System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="ORDER_DATE" sql-type="TIMESTAMP" nullable="true" length="4" scale="0" ado-type="DateTime" />
+        </orm:field>
+        <orm:field name="_customerid" property="CustomerId" behavior="readwrite" uniqueId="31ca0863-1639-4258-b460-50a0d7e8663a" type="System.Nullable`1[[System.Int64, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="CUSTOMER_ID" sql-type="NUMBER" nullable="true" length="20" scale="0" ado-type="Decimal" />
+        </orm:field>
+        <orm:field name="_id" property="Id" behavior="readwrite" uniqueId="6ddeba5e-a659-4bdb-968b-e235dfaad50c" type="System.Nullable`1[[System.Int64, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="ID" sql-type="NUMBER" nullable="true" length="20" scale="0" ado-type="Decimal" />
+        </orm:field>
+        <orm:field name="_csorderitems" property="CsOrderitems" behavior="readwrite" uniqueId="958bebf6-a413-414d-a501-1563aea1961a" type="IseFrameworkUnitTest.CsOrderitem">
+          <orm:collection element-class="IseFrameworkUnitTest.CsOrderitem" inverse-field="_csorder" order-by="" uniqueId="679e4db3-decc-45e3-833b-d1e26bc3dbd4" />
+        </orm:field>
+        <orm:field name="_cscustomer" property="Cscustomer" behavior="readwrite" uniqueId="ca892e7d-a25f-46d4-8433-035cd38fa8fa" type="IseFrameworkUnitTest.CsCustomer">
+          <orm:reference uniqueId="8c2da95f-4b10-4e21-91cf-7d7719895a55" association-name="CsOrderHasCsCustomer">
+            <orm:sharedfield name="_customerid" target-class="IseFrameworkUnitTest.CsCustomer" target-field="_customerid" />
+            <orm:constraint name="FK1B5F527FC5B63D0B" delete-action="dbdefaultrule" destination-table="CS_CUSTOMER" />
+          </orm:reference>
+        </orm:field>
+      </orm:class>
+      <orm:class name="CsCustomer" uniqueId="fc226dcd-bbf5-460f-8719-52609e334e8a">
+        <orm:table name="CS_CUSTOMER" />
+        <orm:identity>
+          <orm:key-generator name="autoinc">
+            <orm:key-generator-member property-name="CustomerId" />
+          </orm:key-generator>
+          <orm:single-field field-name="_customerid" />
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="_customerid" property="CustomerId" behavior="readwrite" uniqueId="0af56278-4b52-453c-8ddf-31b064b2037a" type="System.Int64">
+          <orm:column name="CUSTOMER_ID" sql-type="NUMBER" nullable="false" length="20" scale="0" primary-key="true" backend-calculated="true" ado-type="Decimal" />
+        </orm:field>
+        <orm:field name="_fname" property="Fname" behavior="readwrite" uniqueId="4e7ed38d-1747-4252-aae0-e38cb02090b2" type="System.String">
+          <orm:column name="FNAME" sql-type="NVARCHAR2" nullable="true" length="255" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_phone" property="Phone" behavior="readwrite" uniqueId="28795541-610b-4c33-a97f-1fd8ea648da7" type="System.String">
+          <orm:column name="PHONE" sql-type="NVARCHAR2" nullable="true" length="255" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_lname" property="Lname" behavior="readwrite" uniqueId="c65a834d-c9fc-4b48-aad1-9f25ddacb25a" type="System.String">
+          <orm:column name="LNAME" sql-type="NVARCHAR2" nullable="true" length="255" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_id" property="Id" behavior="readwrite" uniqueId="32197015-c460-4b3f-8ada-9902f17b6883" type="System.Nullable`1[[System.Int64, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="ID" sql-type="NUMBER" nullable="true" length="20" scale="0" ado-type="Decimal" />
+        </orm:field>
+        <orm:field name="_csorders" property="CsOrders" behavior="readwrite" uniqueId="a0e822aa-cf3c-4266-a4dd-55bc55ae1eab" type="IseFrameworkUnitTest.CsOrder">
+          <orm:collection element-class="IseFrameworkUnitTest.CsOrder" inverse-field="_cscustomer" order-by="" uniqueId="8c2da95f-4b10-4e21-91cf-7d7719895a55" />
+        </orm:field>
+      </orm:class>
+    </orm:namespace>
+    <orm:schema schema="">
+      <orm:table name="CS_ORDERITEM">
+        <orm:column name="ORDERITEM_ID" sql-type="NUMBER" nullable="false" length="20" scale="0" primary-key="true" ado-type="Decimal" />
+        <orm:column name="TITLE" sql-type="NVARCHAR2" nullable="true" length="255" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="ORDER_ID" sql-type="NUMBER" nullable="true" length="20" scale="0" ado-type="Decimal" />
+        <orm:column name="ID" sql-type="NUMBER" nullable="true" length="20" scale="0" ado-type="Decimal" />
+        <orm:constraint name="FK7D2C21AB3A41451B" delete-action="dbdefaultrule" destination-table="CS_ORDER">
+          <orm:column name="ORDER_ID" sql-type="NUMBER" nullable="true" length="20" scale="0" ado-type="Decimal" />
+        </orm:constraint>
+      </orm:table>
+      <orm:table name="CS_ORDER">
+        <orm:column name="ORDER_ID" sql-type="NUMBER" nullable="false" length="20" scale="0" primary-key="true" ado-type="Decimal" />
+        <orm:column name="AMOUNT" sql-type="NUMBER" nullable="true" length="10" scale="0" ado-type="Decimal" />
+        <orm:column name="ORDER_DATE" sql-type="TIMESTAMP" nullable="true" length="4" scale="0" ado-type="DateTime" />
+        <orm:column name="CUSTOMER_ID" sql-type="NUMBER" nullable="true" length="20" scale="0" ado-type="Decimal" />
+        <orm:column name="ID" sql-type="NUMBER" nullable="true" length="20" scale="0" ado-type="Decimal" />
+        <orm:constraint name="FK1B5F527FC5B63D0B" delete-action="dbdefaultrule" destination-table="CS_CUSTOMER">
+          <orm:column name="CUSTOMER_ID" sql-type="NUMBER" nullable="true" length="20" scale="0" ado-type="Decimal" />
+        </orm:constraint>
+      </orm:table>
+      <orm:table name="CS_CUSTOMER">
+        <orm:column name="CUSTOMER_ID" sql-type="NUMBER" nullable="false" length="20" scale="0" primary-key="true" backend-calculated="true" ado-type="Decimal" />
+        <orm:column name="FNAME" sql-type="NVARCHAR2" nullable="true" length="255" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="PHONE" sql-type="NVARCHAR2" nullable="true" length="255" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="LNAME" sql-type="NVARCHAR2" nullable="true" length="255" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="ID" sql-type="NUMBER" nullable="true" length="20" scale="0" ado-type="Decimal" />
+      </orm:table>
+    </orm:schema>
+    <orm:relational-naming-settings>
+      <orm:source-strategy>Property</orm:source-strategy>
+      <orm:remove-camel-case>False</orm:remove-camel-case>
+    </orm:relational-naming-settings>
+  </orm:orm>
+  <ModelSettings xmlns="">
+    <AppConfigConnectionPropertyName>Connection</AppConfigConnectionPropertyName>
+    <AppConfigConnectionString>DATA SOURCE=ISE;USER ID=ISEFILING;password=ise3535</AppConfigConnectionString>
+    <NamingSettings>
+      <ClassRules>
+        <CaseMode>PascalCase</CaseMode>
+        <PluralizationMode>Singularize</PluralizationMode>
+        <RemoveUnderscore>true</RemoveUnderscore>
+        <UnderscoreAsWordDelimiter>true</UnderscoreAsWordDelimiter>
+        <CapitalLetterAsWordDelimiter>false</CapitalLetterAsWordDelimiter>
+      </ClassRules>
+      <FieldRules>
+        <AddPrefix>_</AddPrefix>
+        <CaseMode>CamelCase</CaseMode>
+        <RemoveUnderscore>true</RemoveUnderscore>
+        <UnderscoreAsWordDelimiter>true</UnderscoreAsWordDelimiter>
+        <CapitalLetterAsWordDelimiter>false</CapitalLetterAsWordDelimiter>
+      </FieldRules>
+      <PropertyRules>
+        <CaseMode>PascalCase</CaseMode>
+        <RemoveUnderscore>true</RemoveUnderscore>
+        <UnderscoreAsWordDelimiter>true</UnderscoreAsWordDelimiter>
+        <CapitalLetterAsWordDelimiter>false</CapitalLetterAsWordDelimiter>
+      </PropertyRules>
+      <NavigationPropertyRules />
+    </NamingSettings>
+    <CodeGenerationSettings>
+      <MappingDefinitionType>Xml</MappingDefinitionType>
+    </CodeGenerationSettings>
+    <SchemaUpdateSettings />
+    <BackendConfigurationSettings>
+      <BackendConfiguration>
+        <Backend>Oracle</Backend>
+        <ProviderName>Oracle.DataAccess.Client</ProviderName>
+      </BackendConfiguration>
+    </BackendConfigurationSettings>
+  </ModelSettings>
+  <Types>
+    <DomainClass Id="f8d9bd9e-cac3-4e85-9fad-e488e7840571" name="CsOrderitem" namespace="IseFrameworkUnitTest" showPropertiesCompartment="true" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true">
+      <Property Id="940f6f8c-4590-4ccb-a409-b0950868c0db" name="OrderitemId" type="Int64" label="OrderitemId : Int64" kind="Persistent" identity="true" fieldName="_orderitemid" />
+      <Property Id="741b8f94-7c5d-4b9a-aa0f-82739e6a0c9a" name="Id" type="Int64" label="Id : Int64" nullable="true" kind="Persistent" fieldName="_id" />
+      <Property Id="be6be29f-59bb-4165-a8b6-92df30520d83" name="OrderId" type="Int64" label="OrderId : Int64" nullable="true" kind="Persistent" fieldName="_orderid" />
+      <Property Id="1797c1b4-9e90-470a-81f7-566647c6c158" name="Title" label="Title : String" kind="Persistent" fieldName="_title" />
+      <AssociationTargets>
+        <Association Id="679e4db3-decc-45e3-833b-d1e26bc3dbd4" SourceMultiplicity="ZeroOne" name="CsOrderitemHasCsOrder">
+          <DomainClassMoniker name="/EntitiesModel1/CsOrder" />
+          <targetNavigationalProperty>
+            <associationDefinesTargetProperty Id="ce4afd19-5729-413b-a7f3-722141d6deea">
+              <NavigationalPropertyMoniker name="/EntitiesModel1/CsOrder/CsOrderitems" />
+            </associationDefinesTargetProperty>
+          </targetNavigationalProperty>
+          <sourceNavigationalProperty>
+            <associationDefinesSourceProperty Id="98423f04-2427-4931-9a25-b966bf061f19">
+              <NavigationalPropertyMoniker name="/EntitiesModel1/CsOrderitem/Csorder" />
+            </associationDefinesSourceProperty>
+          </sourceNavigationalProperty>
+        </Association>
+      </AssociationTargets>
+      <navigationalProperties>
+        <classHasNavigationalProperties Id="91936bf0-036e-4603-990a-745ec4f0579c">
+          <NavigationalProperty Id="c5cbac82-fc0e-438f-9263-9887421b40a8" name="Csorder" type="CsOrder" label="Csorder : CsOrder" nullable="true" kind="Persistent" fieldName="_csorder" isDependent="false" isManaged="false" />
+        </classHasNavigationalProperties>
+      </navigationalProperties>
+    </DomainClass>
+    <DomainClass Id="b4721c27-42de-4fb5-b7f2-93ef8d1fd510" name="CsOrder" namespace="IseFrameworkUnitTest" showPropertiesCompartment="true" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true">
+      <Property Id="90cd701f-8a61-4582-ac14-e4eb319f962d" name="OrderId" type="Int64" label="OrderId : Int64" kind="Persistent" identity="true" fieldName="_orderid" />
+      <Property Id="012732a2-9fbd-496a-bbd0-09d146e53edf" name="Amount" type="Int64" label="Amount : Int64" nullable="true" kind="Persistent" fieldName="_amount" />
+      <Property Id="31ca0863-1639-4258-b460-50a0d7e8663a" name="CustomerId" type="Int64" label="CustomerId : Int64" nullable="true" kind="Persistent" fieldName="_customerid" />
+      <Property Id="6ddeba5e-a659-4bdb-968b-e235dfaad50c" name="Id" type="Int64" label="Id : Int64" nullable="true" kind="Persistent" fieldName="_id" />
+      <Property Id="19d04ec9-2be2-425c-bb48-d258d39c8c66" name="OrderDate" type="DateTime" label="OrderDate : DateTime" nullable="true" kind="Persistent" fieldName="_orderdate" />
+      <AssociationTargets>
+        <Association Id="8c2da95f-4b10-4e21-91cf-7d7719895a55" SourceMultiplicity="ZeroOne" name="CsOrderHasCsCustomer">
+          <DomainClassMoniker name="/EntitiesModel1/CsCustomer" />
+          <targetNavigationalProperty>
+            <associationDefinesTargetProperty Id="2747352d-3aef-4456-ae83-c6aa61ae3ad5">
+              <NavigationalPropertyMoniker name="/EntitiesModel1/CsCustomer/CsOrders" />
+            </associationDefinesTargetProperty>
+          </targetNavigationalProperty>
+          <sourceNavigationalProperty>
+            <associationDefinesSourceProperty Id="e36ba3af-b6d4-4aac-ab0a-36e7460d13d4">
+              <NavigationalPropertyMoniker name="/EntitiesModel1/CsOrder/Cscustomer" />
+            </associationDefinesSourceProperty>
+          </sourceNavigationalProperty>
+        </Association>
+      </AssociationTargets>
+      <navigationalProperties>
+        <classHasNavigationalProperties Id="5086eb75-352a-4bb2-91bd-ef3002bdc3a4">
+          <NavigationalProperty Id="958bebf6-a413-414d-a501-1563aea1961a" name="CsOrderitems" type="IList&lt;CsOrderitem&gt;" label="CsOrderitems : IList&lt;CsOrderitem&gt;" nullable="true" kind="Persistent" fieldName="_csorderitems" isDependent="false" isManaged="false" />
+        </classHasNavigationalProperties>
+        <classHasNavigationalProperties Id="74a7473e-ed17-4c75-a22f-af9c70ec5290">
+          <NavigationalProperty Id="ca892e7d-a25f-46d4-8433-035cd38fa8fa" name="Cscustomer" type="CsCustomer" label="Cscustomer : CsCustomer" nullable="true" kind="Persistent" fieldName="_cscustomer" isDependent="false" isManaged="false" />
+        </classHasNavigationalProperties>
+      </navigationalProperties>
+    </DomainClass>
+    <DomainClass Id="fc226dcd-bbf5-460f-8719-52609e334e8a" name="CsCustomer" namespace="IseFrameworkUnitTest" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true" identityMechanismMember="CustomerId">
+      <Property Id="0af56278-4b52-453c-8ddf-31b064b2037a" name="CustomerId" type="Int64" label="CustomerId : Int64" kind="Persistent" identity="true" fieldName="_customerid" />
+      <Property Id="4e7ed38d-1747-4252-aae0-e38cb02090b2" name="Fname" label="Fname : String" kind="Persistent" fieldName="_fname" />
+      <Property Id="32197015-c460-4b3f-8ada-9902f17b6883" name="Id" type="Int64" label="Id : Int64" nullable="true" kind="Persistent" fieldName="_id" />
+      <Property Id="c65a834d-c9fc-4b48-aad1-9f25ddacb25a" name="Lname" label="Lname : String" kind="Persistent" fieldName="_lname" />
+      <Property Id="28795541-610b-4c33-a97f-1fd8ea648da7" name="Phone" label="Phone : String" kind="Persistent" fieldName="_phone" />
+      <navigationalProperties>
+        <classHasNavigationalProperties Id="5e9b728a-7d27-43b5-9c2d-f04bc2e998be">
+          <NavigationalProperty Id="a0e822aa-cf3c-4266-a4dd-55bc55ae1eab" name="CsOrders" type="IList&lt;CsOrder&gt;" label="CsOrders : IList&lt;CsOrder&gt;" nullable="true" kind="Persistent" fieldName="_csorders" isDependent="false" isManaged="false" />
+        </classHasNavigationalProperties>
+      </navigationalProperties>
+    </DomainClass>
+  </Types>
+  <domainContext>
+    <domainModelHasDomainContext Id="b03086df-e443-4f3f-b6af-51cc9d4ccce2">
+      <domainContainer name="EntitiesModel1" namespace="IseFrameworkUnitTest" showPropertiesCompartment="true">
+        <entitySetProperty name="CsOrderitems" namespace="IseFrameworkUnitTest" type="CsOrderitem" label="CsOrderitems : IQueryable&lt;IseFrameworkUnitTest.CsOrderitem&gt;" />
+        <entitySetProperty name="CsOrders" namespace="IseFrameworkUnitTest" type="CsOrder" label="CsOrders : IQueryable&lt;IseFrameworkUnitTest.CsOrder&gt;" />
+        <entitySetProperty name="CsCustomers" namespace="IseFrameworkUnitTest" type="CsCustomer" label="CsCustomers : IQueryable&lt;IseFrameworkUnitTest.CsCustomer&gt;" />
+      </domainContainer>
+    </domainModelHasDomainContext>
+  </domainContext>
+</DomainModel>

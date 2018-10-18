@@ -1,0 +1,13 @@
+E:\ISECollection\ISEFramework\ISE.Framework.Common\bin\Release\ISE.Framework.Common.dll
+E:\ISECollection\ISEFramework\ISE.Framework.Common\bin\Release\ISE.Framework.Common.pdb
+E:\ISECollection\ISEFramework\ISE.Framework.Common\bin\Release\EmitMapper.dll
+E:\ISECollection\ISEFramework\ISE.Framework.Common\bin\Release\ISE.Framework.Utility.dll
+E:\ISECollection\ISEFramework\ISE.Framework.Common\bin\Release\SLF.dll
+E:\ISECollection\ISEFramework\ISE.Framework.Common\bin\Release\ISE.UILibrary.dll
+E:\ISECollection\ISEFramework\ISE.Framework.Common\bin\Release\ISE.ClassLibrary.dll
+E:\ISECollection\ISEFramework\ISE.Framework.Common\bin\Release\Oracle.DataAccess.dll
+E:\ISECollection\ISEFramework\ISE.Framework.Common\bin\Release\ISE.Framework.Utility.pdb
+E:\ISECollection\ISEFramework\ISE.Framework.Common\bin\Release\SLF.pdb
+E:\ISECollection\ISEFramework\ISE.Framework.Common\obj\Release\ISE.Framework.Common.csprojResolveAssemblyReference.cache
+E:\ISECollection\ISEFramework\ISE.Framework.Common\obj\Release\ISE.Framework.Common.dll
+E:\ISECollection\ISEFramework\ISE.Framework.Common\obj\Release\ISE.Framework.Common.pdb

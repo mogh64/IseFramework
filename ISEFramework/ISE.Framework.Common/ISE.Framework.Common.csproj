@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B777A540-A025-4C04-96B9-C9BEA1BC891E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ISE.Framework.Common</RootNamespace>
+    <AssemblyName>ISE.Framework.Common</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Release\Framework\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EmitMapper, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Release\Framework\EmitMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="ISE.Framework.Utility, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Release\Framework\ISE.Framework.Utility.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="SLF, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Release\Framework\SLF.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.Linq.Dynamic, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\System.Linq.Dynamic.1.0.0\lib\net40\System.Linq.Dynamic.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Channels" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Aspects\ChangeExceptionProcessor.cs" />
+    <Compile Include="Aspects\LogManager.cs" />
+    <Compile Include="Aspects\ProcessAttribute.cs" />
+    <Compile Include="Aspects\InterceptSink.cs" />
+    <Compile Include="Aspects\InterceptProperty.cs" />
+    <Compile Include="Aspects\InterceptAttribute.cs" />
+    <Compile Include="Aspects\PostProcessAttribute.cs" />
+    <Compile Include="Aspects\PreProcessAttribute.cs" />
+    <Compile Include="Aspects\RemoteCallInfo.cs" />
+    <Compile Include="Aspects\TraceExceptionProcessor.cs" />
+    <Compile Include="Aspects\ExceptionHandlingProcessor.cs" />
+    <Compile Include="Aspects\TracePostProcessor.cs" />
+    <Compile Include="Aspects\TracePreProcessor.cs" />
+    <Compile Include="Aspects\CodeTimerProcessor.cs" />
+    <Compile Include="Aspects\ConsoleTraceListener.cs" />
+    <Compile Include="Aspects\CodeTimer.cs" />
+    <Compile Include="Aspects\IPostProcessor.cs" />
+    <Compile Include="Aspects\IPreProcessor.cs" />
+    <Compile Include="CommonBase\BaseDto.cs" />
+    <Compile Include="CommonBase\DtoAssembler.cs" />
+    <Compile Include="CommonBase\DtoContainer.cs" />
+    <Compile Include="CommonBase\DtoObjectState.cs" />
+    <Compile Include="CommonBase\EntityAssembler.cs" />
+    <Compile Include="CommonBase\EntityHelper.cs" />
+    <Compile Include="CommonBase\IdentitySetter.cs" />
+    <Compile Include="CommonBase\IEntity.cs" />
+    <Compile Include="CommonBase\ReportDto.cs" />
+    <Compile Include="Dependency\DependencyContainer.cs" />
+    <Compile Include="GenericFactory\Factory.cs" />
+    <Compile Include="GenericFactory\IFactory.cs" />
+    <Compile Include="GenericFactory\IProduct.cs" />
+    <Compile Include="Logger\FileLogger.cs" />
+    <Compile Include="Logger\IInternalPreLogger.cs" />
+    <Compile Include="PersistantPackage\PersistanceBox.cs" />
+    <Compile Include="PersistantPackage\UpdatePackageBox.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\ConfigManager.cs" />
+    <Compile Include="Service\Encoder\Binary\BinaryMessageEncoder.cs" />
+    <Compile Include="Service\Encoder\TextOrMtomEncodingBindingElement.cs" />
+    <Compile Include="Service\Encoder\GZip\ExtendedMessageEncoderFactory.cs" />
+    <Compile Include="Service\Encoder\GZip\ExtendedMessageEncodingBindingElement.cs" />
+    <Compile Include="Service\Encoder\GZip\GZipMessageEncoder.cs" />
+    <Compile Include="Service\Encoder\GZip\MessageEncodingBindingElementExtension.cs" />
+    <Compile Include="Service\Security\IServiceAuthorize.cs" />
+    <Compile Include="Service\ServerContext.cs" />
+    <Compile Include="Service\ClientContext.cs" />
+    <Compile Include="Service\ClientServiceLocator.cs" />
+    <Compile Include="Service\Message\BusinessExceptionDto.cs" />
+    <Compile Include="Service\Message\BusinessException.cs" />
+    <Compile Include="Service\Message\BusinessExceptionEnum.cs" />
+    <Compile Include="Service\Message\BusinessWarning.cs" />
+    <Compile Include="Service\Message\BusinessWarningEnum.cs" />
+    <Compile Include="Service\Message\IBusinessExceptionManager.cs" />
+    <Compile Include="Service\Message\IBusinessWarningManager.cs" />
+    <Compile Include="Service\Message\Response.cs" />
+    <Compile Include="Service\Message\IDtoResponseEnvelop.cs" />
+    <Compile Include="Service\Message\ResponseBuilder.cs" />
+    <Compile Include="Service\Message\ResponseDto.cs" />
+    <Compile Include="Service\Message\ResponseDtoContainer.cs" />
+    <Compile Include="Service\Security\LoginContext.cs" />
+    <Compile Include="Service\ServiceAdapter.cs" />
+    <Compile Include="Service\ServiceBase\IServiceBase.cs" />
+    <Compile Include="Service\Security\ServiceLogin.cs" />
+    <Compile Include="Service\UserHeaderToken.cs" />
+    <Compile Include="Service\WcfCurrentContext.cs" />
+    <Compile Include="Service\WcfProxy.cs" />
+    <Compile Include="Service\Wcf\ContextType.cs" />
+    <Compile Include="Service\Wcf\CustomHeader.cs" />
+    <Compile Include="Service\Wcf\Diagnostics\RollingXmlWriterTraceListener.cs" />
+    <Compile Include="Service\Wcf\MessageInspector.cs" />
+    <Compile Include="Service\Wcf\ServiceHeader.cs" />
+    <Compile Include="Service\Wcf\EndpointBehaviorExtensionElement.cs" />
+    <Compile Include="Service\Wcf\IBussinessExceptionViewer.cs" />
+    <Compile Include="Service\Wcf\EndpointBehavior.cs" />
+    <Compile Include="Service\Wcf\ICommandDispatcher.cs" />
+    <Compile Include="Service\Wcf\IServiceContract.cs" />
+    <Compile Include="Service\Wcf\Request\BusinessNotifier.cs" />
+    <Compile Include="Service\Wcf\Request\Container.cs" />
+    <Compile Include="Service\Wcf\Request\GlobalContext.cs" />
+    <Compile Include="Service\Wcf\Request\IBusinessNotifier.cs" />
+    <Compile Include="Service\Wcf\Request\IGlobalContext.cs" />
+    <Compile Include="Service\Wcf\Request\IRequestContext.cs" />
+    <Compile Include="Service\Wcf\Request\IResponseManager.cs" />
+    <Compile Include="Service\Wcf\WcfCommandContext.cs" />
+    <Compile Include="Service\Wcf\WcfCommandDispatcher.cs" />
+    <Compile Include="Service\Wcf\WcfRequestContext\InstanceCreationAttribute.cs" />
+    <Compile Include="Service\Wcf\WcfRequestContext\InstanceCreationExtension.cs" />
+    <Compile Include="Service\Wcf\WcfRequestContext\InstanceCreationInitializer.cs" />
+    <Compile Include="Service\Wcf\WcfRequestContext\RequestContext.cs" />
+    <Compile Include="Token\CustomUsernamePasswordAuthentication.cs" />
+    <Compile Include="Token\TokenCache.cs" />
+    <Compile Include="Token\CustomIssuedSecurityTokenProvider.cs" />
+    <Compile Include="Token\CustomClientCredentialsSecurityTokenManager.cs" />
+    <Compile Include="Token\CustomClientCredentials.cs" />
+    <Compile Include="Token\UserIdentity.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

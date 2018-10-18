@@ -1,0 +1,7 @@
+E:\ISECollection\ISEFramework\RouterRelease\RouterHost.exe.config
+E:\ISECollection\ISEFramework\RouterRelease\RouterHost.exe
+E:\ISECollection\ISEFramework\RouterRelease\RouterHost.pdb
+E:\ISECollection\ISEFramework\RouterHost\obj\Debug\RouterHost.csprojResolveAssemblyReference.cache
+E:\ISECollection\ISEFramework\RouterHost\obj\Debug\RouterHost.exe
+E:\ISECollection\ISEFramework\RouterHost\obj\Debug\RouterHost.pdb
+E:\ISECollection\ISEFramework\RouterRelease\App.config

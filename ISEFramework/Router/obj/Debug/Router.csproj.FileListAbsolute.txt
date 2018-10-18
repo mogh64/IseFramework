@@ -1,0 +1,5 @@
+E:\ISECollection\ISEFramework\RouterRelease\Router.dll
+E:\ISECollection\ISEFramework\RouterRelease\Router.pdb
+E:\ISECollection\ISEFramework\Router\obj\Debug\Router.dll
+E:\ISECollection\ISEFramework\Router\obj\Debug\Router.pdb
+E:\ISECollection\ISEFramework\Router\obj\Debug\Router.csprojResolveAssemblyReference.cache

@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="bcea5a31-8b46-4caf-8ed5-ac87e846c30c" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/LayerDesigner">
+  <comments>
+    <comment Id="e373aeb3-3881-4676-9bb0-94bdf3a3b97c" name="Comment1">
+      <body>Win based </body>
+    </comment>
+    <comment Id="7784531d-3663-4985-bb69-29a4d8fd91f6" name="Comment11">
+      <body>Web based </body>
+    </comment>
+  </comments>
+  <layers>
+    <layer Id="f29754cb-4673-47ab-853c-15c3df481410" name="Client&#xD;&#xA;">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="4a9fb6b4-f4a4-45c2-94a5-984df6f2e9eb" direction="Forward">
+          <layerMoniker Id="8ecd09f5-9dbe-4077-8716-3ba77c2ed186" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="8ecd09f5-9dbe-4077-8716-3ba77c2ed186" name="Application Server&#xD;&#xA;">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="321d992d-580b-4cc5-a954-d2b4a839e991" direction="Forward">
+          <layerMoniker Id="d90941d9-faa3-4057-add2-b4c25da253be" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="d90941d9-faa3-4057-add2-b4c25da253be" name="Data Base&#xD;&#xA;" />
+    <layer Id="68308e4a-232c-47d6-a74d-f29a66825ba6" name="Client">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="ddfc66b6-1b22-4889-9e61-f67f58ca28af" direction="Forward">
+          <layerMoniker Id="1f6f546d-a9cd-4411-a3d3-d24544bb0c14" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="22456781-b0bd-4063-8858-572b5b8c0a49" name="Application Server">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="a32a48d4-4f44-41ef-81e5-27d5a81359a7" direction="Forward">
+          <layerMoniker Id="ab154858-2b1b-41ad-88c9-818dc6fe03fa" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="ab154858-2b1b-41ad-88c9-818dc6fe03fa" name="Data Base&#xD;&#xA;&#xD;&#xA;" />
+    <layer Id="1f6f546d-a9cd-4411-a3d3-d24544bb0c14" name="Web Server">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="3688503a-694a-4971-80ea-679b45d491d9" direction="Forward">
+          <layerMoniker Id="22456781-b0bd-4063-8858-572b5b8c0a49" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+  </layers>
+</layerModel>

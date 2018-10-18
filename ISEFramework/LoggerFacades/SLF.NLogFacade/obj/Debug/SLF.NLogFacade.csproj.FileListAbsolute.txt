@@ -1,0 +1,1 @@
+E:\ISECollection\ISEFramework\LoggerFacades\SLF.NLogFacade\obj\Debug\SLF.NLogFacade.csprojResolveAssemblyReference.cache

@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="0d0c151d-4659-4dcd-a892-fd03722f6dec" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/LayerDesigner">
+  <layers>
+    <layer Id="4db0488f-9764-49af-954b-0176e32b38f6" name="Application Server">
+      <childLayers>
+        <layer Id="1dbeec12-b1bb-4a85-a9d9-c8bb4529356c" name="Service Layer">
+          <dependencyToLayers>
+            <dependencyFromLayerToLayer Id="862b87f1-e5e2-430d-95a8-f0cdb781823d" direction="Forward">
+              <layerMoniker Id="1d921827-6986-4c35-b54f-d7d84f0f9935" />
+            </dependencyFromLayerToLayer>
+          </dependencyToLayers>
+          <childLayers>
+            <layer Id="514748be-9889-4734-aa8e-a7f002d9511b" name="CustomService">
+              <dependencyToLayers>
+                <dependencyFromLayerToLayer Id="61448ece-f1e7-4bf7-b882-89de7dfef90a" direction="Forward">
+                  <layerMoniker Id="a9c43ee7-bde2-458b-a04f-4f6ade66bf46" />
+                </dependencyFromLayerToLayer>
+              </dependencyToLayers>
+            </layer>
+          </childLayers>
+        </layer>
+        <layer Id="1d921827-6986-4c35-b54f-d7d84f0f9935" name="Bussiness Layer">
+          <dependencyToLayers>
+            <dependencyFromLayerToLayer Id="378070c2-ef28-4616-8a5a-26f257f0412e" direction="Forward">
+              <layerMoniker Id="631aab9c-029f-4065-a662-9da4afa970b4" />
+            </dependencyFromLayerToLayer>
+            <dependencyFromLayerToLayer Id="76bba220-fcce-4eaa-ba56-5a0af1668586" direction="Forward">
+              <layerMoniker Id="f0cef17f-508a-4f01-ad12-5c1088693b7b" />
+            </dependencyFromLayerToLayer>
+            <dependencyFromLayerToLayer Id="0f818b41-8500-4beb-b28b-b05cb1a2b8c2" direction="Forward">
+              <layerMoniker Id="316cf116-b564-4fb9-b543-8a49726e696b" />
+            </dependencyFromLayerToLayer>
+          </dependencyToLayers>
+        </layer>
+        <layer Id="631aab9c-029f-4065-a662-9da4afa970b4" name="DataAccess Layer">
+          <dependencyToLayers>
+            <dependencyFromLayerToLayer Id="3a46d2c5-0ce9-4a26-809e-4ce8923c114e" direction="Forward">
+              <layerMoniker Id="f0cef17f-508a-4f01-ad12-5c1088693b7b" />
+            </dependencyFromLayerToLayer>
+            <dependencyFromLayerToLayer Id="4210d89d-423b-4a60-a177-16d3d94d532c" direction="Forward">
+              <layerMoniker Id="5ec107ae-2b62-4235-8344-d8c894b4ac5b" />
+            </dependencyFromLayerToLayer>
+            <dependencyFromLayerToLayer Id="8456b1cb-f1b4-4c22-9dd2-949441491fe1" direction="Forward">
+              <layerMoniker Id="5afe6cf3-b8e7-44f9-9e62-783c71c45791" />
+            </dependencyFromLayerToLayer>
+          </dependencyToLayers>
+        </layer>
+        <layer Id="54bc879c-a9b5-42ee-ada3-43f84b578083" name="Common Layer">
+          <childLayers>
+            <layer Id="f0cef17f-508a-4f01-ad12-5c1088693b7b" name="Entity Model">
+              <dependencyToLayers>
+                <dependencyFromLayerToLayer Id="70767b43-ee15-4411-b455-1918cf58eac9" direction="Forward">
+                  <layerMoniker Id="5ec107ae-2b62-4235-8344-d8c894b4ac5b" />
+                </dependencyFromLayerToLayer>
+              </dependencyToLayers>
+              <childLayers>
+                <layer Id="f11b63e7-1725-436e-938b-09214dd8c78b" name="Entity Type" />
+              </childLayers>
+            </layer>
+            <layer Id="a9c43ee7-bde2-458b-a04f-4f6ade66bf46" name="ICustomeService">
+              <dependencyToLayers>
+                <dependencyFromLayerToLayer Id="6b4aed30-274e-4c75-8a72-963ac3f4c3e5" direction="Forward">
+                  <layerMoniker Id="098c52b4-24c7-41a0-8e1d-5c8c9cc3df53" />
+                </dependencyFromLayerToLayer>
+              </dependencyToLayers>
+            </layer>
+          </childLayers>
+        </layer>
+      </childLayers>
+    </layer>
+    <layer Id="a8e8592a-a670-4d72-a805-340d6e34521f" name="win Client Application">
+      <childLayers>
+        <layer Id="49773e27-88fe-4263-a74e-84406e1886e2" name="Presenter">
+          <dependencyToLayers>
+            <dependencyFromLayerToLayer Id="0a0d735c-f2a4-469e-acd6-a292f9b2af61" direction="Forward">
+              <layerMoniker Id="eacbd494-c065-4a10-bd8d-7d15337a7e51" />
+            </dependencyFromLayerToLayer>
+            <dependencyFromLayerToLayer Id="13d5515a-5840-49d5-af97-29e0b6282fff" direction="Forward">
+              <layerMoniker Id="a9c43ee7-bde2-458b-a04f-4f6ade66bf46" />
+            </dependencyFromLayerToLayer>
+          </dependencyToLayers>
+        </layer>
+        <layer Id="7bffe177-f75c-4dd2-9f1f-7f8354377ef9" name="UI">
+          <dependencyToLayers>
+            <dependencyFromLayerToLayer Id="369274f6-63c9-4de4-8f99-2a50cbb0ae99" direction="Forward">
+              <layerMoniker Id="49773e27-88fe-4263-a74e-84406e1886e2" />
+            </dependencyFromLayerToLayer>
+          </dependencyToLayers>
+        </layer>
+      </childLayers>
+    </layer>
+    <layer Id="5ec107ae-2b62-4235-8344-d8c894b4ac5b" name="DataBase" />
+    <layer Id="4522f385-93c2-4276-947b-0642c8bc5209" name="Framework.Common">
+      <childLayers>
+        <layer Id="0ca374c5-8c73-4e98-9061-64e5a17edc54" name="Dto Type" />
+        <layer Id="098c52b4-24c7-41a0-8e1d-5c8c9cc3df53" name="IService" />
+        <layer Id="1223ab14-697c-422a-bb14-e2d0ae0eabd8" name="DtoContainer Type" />
+      </childLayers>
+    </layer>
+    <layer Id="87712aa8-7ad8-46f1-9de7-e7fcd6f87838" name="Framework.Utility">
+      <childLayers>
+        <layer Id="eacbd494-c065-4a10-bd8d-7d15337a7e51" name="Service Adapter" />
+        <layer Id="7473efbf-554a-4344-b5a1-4a204a90b0bf" name="Logging" />
+        <layer Id="8f068eb1-a346-420b-a53a-56bd853831a0" name="Exception Handling" />
+      </childLayers>
+    </layer>
+    <layer Id="95ceef90-2d73-4f0e-bd0d-c4b63d4f9aa8" name="Web Application" />
+    <layer Id="54b26b6f-701c-4054-977b-f4f578176f35" name="Mobile App" />
+    <layer Id="34675154-3ebf-412e-9fec-b1c28a30f0ba" name="Service Proxy">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="3f9d1fda-6580-41ea-8385-d2c75be8fd38" direction="Forward">
+          <layerMoniker Id="1dbeec12-b1bb-4a85-a9d9-c8bb4529356c" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="465ff36e-ddf9-4991-8383-06fbde5105ba" name="Framework.Core">
+      <childLayers>
+        <layer Id="5afe6cf3-b8e7-44f9-9e62-783c71c45791" name="Data Access Base" />
+        <layer Id="316cf116-b564-4fb9-b543-8a49726e696b" name="Bussiness Base">
+          <dependencyToLayers>
+            <dependencyFromLayerToLayer Id="3fe6e8ad-6ad8-4e60-bb96-71f8e4993d95" direction="Forward">
+              <layerMoniker Id="5afe6cf3-b8e7-44f9-9e62-783c71c45791" />
+            </dependencyFromLayerToLayer>
+          </dependencyToLayers>
+        </layer>
+      </childLayers>
+    </layer>
+  </layers>
+</layerModel>

@@ -1,0 +1,5 @@
+E:\ISECollection\ISEFramework\Release\Framework\ISE.Framework.Utility.dll
+E:\ISECollection\ISEFramework\Release\Framework\ISE.Framework.Utility.pdb
+E:\ISECollection\ISEFramework\ISE.Framework.Utility\obj\Debug\ISE.Framework.Utility.dll
+E:\ISECollection\ISEFramework\ISE.Framework.Utility\obj\Debug\ISE.Framework.Utility.pdb
+E:\ISECollection\ISEFramework\ISE.Framework.Utility\obj\Debug\ISE.Framework.Utility.csprojResolveAssemblyReference.cache

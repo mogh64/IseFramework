@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="8cf76d69-1669-4b15-8574-0f110012635d" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/LayerDesigner">
+  <layers>
+    <layer Id="af53f03c-a2fb-478a-9969-09412190e211" name="Application Server">
+      <childLayers>
+        <layer Id="dbc6f8b4-c3c0-4225-a4c3-99dfe264fa80" name="Data Access">
+          <dependencyToLayers>
+            <dependencyFromLayerToLayer Id="f4f1fc56-f415-4add-ba1c-03344c9b1124" direction="Forward">
+              <layerMoniker Id="05d76260-33a7-41c0-8e2c-13529dd72874" />
+            </dependencyFromLayerToLayer>
+            <dependencyFromLayerToLayer Id="66fb0e56-d39e-4ba1-8a90-1c982a8205a0" direction="Forward">
+              <layerMoniker Id="10112ae4-2e6a-476e-badd-e5d1cf463179" />
+            </dependencyFromLayerToLayer>
+          </dependencyToLayers>
+        </layer>
+        <layer Id="28cad30e-8a24-4ce9-bf31-55e47a53c95d" name="Bussiness">
+          <dependencyToLayers>
+            <dependencyFromLayerToLayer Id="3a3dcb89-af94-460d-815c-9bff60a74961" direction="Forward">
+              <layerMoniker Id="10112ae4-2e6a-476e-badd-e5d1cf463179" />
+            </dependencyFromLayerToLayer>
+          </dependencyToLayers>
+        </layer>
+        <layer Id="dee2976c-bbfc-440d-a626-f7e8eb9f11df" name="Service">
+          <dependencyToLayers>
+            <dependencyFromLayerToLayer Id="ff9f342e-466f-49b3-8895-5281df01add1" direction="Forward">
+              <layerMoniker Id="10112ae4-2e6a-476e-badd-e5d1cf463179" />
+            </dependencyFromLayerToLayer>
+          </dependencyToLayers>
+        </layer>
+        <layer Id="05d76260-33a7-41c0-8e2c-13529dd72874" name="ORM Entity" />
+        <layer Id="10112ae4-2e6a-476e-badd-e5d1cf463179" name="DTO Object" />
+      </childLayers>
+    </layer>
+    <layer Id="2e7df292-ca9d-413c-9770-c0e6cb47799f" name="Client">
+      <childLayers>
+        <layer Id="c80bccda-f92a-40dd-8bd5-b5b343108ebb" name="Presenter">
+          <dependencyToLayers>
+            <dependencyFromLayerToLayer Id="d3b9e2f8-2104-47e6-a373-7c5af2f5ee14" direction="Forward">
+              <layerMoniker Id="866e458e-e47c-4ed4-8559-b080dd36f05c" />
+            </dependencyFromLayerToLayer>
+          </dependencyToLayers>
+        </layer>
+        <layer Id="deab4d5d-4fa1-491f-b136-e2d69516e964" name="View">
+          <dependencyToLayers>
+            <dependencyFromLayerToLayer Id="c5bf91f9-3448-49c8-a258-9b18a768e667" direction="Forward">
+              <layerMoniker Id="866e458e-e47c-4ed4-8559-b080dd36f05c" />
+            </dependencyFromLayerToLayer>
+            <dependencyFromLayerToLayer Id="e6145fba-3693-4b33-9889-a8e68fc2bc40" direction="Forward">
+              <layerMoniker Id="2aca6c4d-b927-451f-8019-bc0486955617" />
+            </dependencyFromLayerToLayer>
+          </dependencyToLayers>
+        </layer>
+        <layer Id="24b2374a-4c2d-402e-9137-b8505b963b48" name="User Control">
+          <dependencyToLayers>
+            <dependencyFromLayerToLayer Id="780c0fff-5d09-4649-a240-a072a8f2035f" direction="Forward">
+              <layerMoniker Id="2aca6c4d-b927-451f-8019-bc0486955617" />
+            </dependencyFromLayerToLayer>
+            <dependencyFromLayerToLayer Id="0d6787c3-8845-497c-8be0-796cd3156a09" direction="Forward">
+              <layerMoniker Id="866e458e-e47c-4ed4-8559-b080dd36f05c" />
+            </dependencyFromLayerToLayer>
+          </dependencyToLayers>
+        </layer>
+        <layer Id="2aca6c4d-b927-451f-8019-bc0486955617" name="Bindable Object" />
+        <layer Id="866e458e-e47c-4ed4-8559-b080dd36f05c" name="DTO Object" />
+      </childLayers>
+    </layer>
+  </layers>
+</layerModel>

@@ -1,0 +1,1 @@
+E:\ISECollection\ISEFramework\LoggerFacades\SLF.BitFactoryFacade\obj\Debug\SLF.BitFactoryFacade.csprojResolveAssemblyReference.cache

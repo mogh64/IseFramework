@@ -1,0 +1,723 @@
+﻿<#@ template debug="true" hostspecific="True" inherits="Microsoft.VisualStudio.TextTemplating.VSHost.ModelingTextTransformation" language="C#v3.5" #>
+<#@ output extension=".cs" #>
+<#@ EntityDiagrams processor="EntityDiagramsDirectiveProcessor" requires="fileName='EntitiesModel1.rlinq'"  #>
+<#@ assembly name="EnvDTE"#>
+<#@ assembly name="System.Core"#>
+<#@ assembly name="System.Xml"#>
+<#@ import namespace="System" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="System.IO"#>
+<#@ import namespace="System.Text"#>
+<#@ import namespace="Microsoft.VisualStudio.TextTemplating"#>
+<#@ import namespace="EnvDTE"#>
+<#@ import namespace="System.CodeDom.Compiler"#>
+<#@ import namespace="System.CodeDom"#>
+<#@ import namespace="System.Reflection"#>
+<#@ import namespace="Telerik.OpenAccess"#>
+<#@ import namespace="System.Diagnostics" #>
+<#@ Assembly Name="C:\Program Files (x86)\Telerik\OpenAccess ORM\dsl2013\Telerik.OpenAccess.CodeGeneration.dll" #>
+<#@ import namespace="Telerik.OpenAccess.CodeGeneration" #>
+<#@ import namespace="Telerik.OpenAccess.Metadata" #>
+<#@ Assembly Name="Telerik.OpenAccess, Culture=neutral, PublicKeyToken=7ce17eeaf1d59342" #>
+<#@ import namespace="Telerik.OpenAccess.Metadata.Relational" #>
+<#@ include file="C:\Program Files (x86)\Telerik\OpenAccess ORM\dsl2013\CodeGenerationTemplates\CSharp\Includes\General.ttinclude" #>
+<#@ include file="C:\Program Files (x86)\Telerik\OpenAccess ORM\dsl2013\CodeGenerationTemplates\CSharp\Includes\Specific.ttinclude" #>
+<#@ include file="C:\Program Files (x86)\Telerik\OpenAccess ORM\dsl2013\CodeGenerationTemplates\CSharp\Includes\Context.ttinclude" #>
+<#@ include file="C:\Program Files (x86)\Telerik\OpenAccess ORM\dsl2013\CodeGenerationTemplates\CSharp\Includes\OID.ttinclude" #>
+<#@ include file="C:\Program Files (x86)\Telerik\OpenAccess ORM\dsl2013\CodeGenerationTemplates\CSharp\Includes\Interfaces.ttinclude" #>
+<# //System.Diagnostics.Debugger.Break();
+	this.InitializeTemplateGeneration();
+	this.templateContext.StartHeader();#>
+#pragma warning disable 1591
+<#
+	LanguageContext languageContext = LanguageContext.CreateCSharpContext();
+	this.modelSettings.CodeGenerationSettings.MappingDefinitionType = MappingDefinitionType.Attributes;
+
+	this.GenerateFileBlockHeader();
+	this.templateContext.EndBlock(); 
+	
+	this.GenerateNamespaces();
+	
+	this.ExtractClassNames();
+
+	
+	this.GenerateRepositoryClasses();
+			
+	this.templateContext.StartFooter();
+	this.templateContext.EndBlock(); 
+	this.templateContext.Process(this.generateMultipleFiles, this.GetSafeCodeGenPath());
+	
+#>
+#pragma warning restore 1591
+<#+
+	string defaultExtension = ".cs";
+	const string dtoNameExtension = "Dto";
+	const string repositoryNameExtension = "Repository";
+	const string repositoryInterfaceName = "IRepository";
+	List<string> classNames = new List<string>();
+	
+	MetaModelCodeGenUtilities utilities = null;
+	Telerik.OpenAccess.CodeGeneration.CodeDom codegenModel = null;
+	Telerik.OpenAccess.CodeGeneration.CodeClass generatedContext = null;
+	TemplateContext templateContext = null;
+	bool generateMultipleFiles = true;
+	bool shouldGenerateContext = true;
+	string defaultNamespace = string.Empty;
+	string defaultContextName = string.Empty;
+	MetadataContainer metaModel = null;
+	BackendConfiguration backendConfiguration = null;
+	ModelSettings modelSettings = null;
+	
+	private void InitializeTemplateGeneration()
+	{
+	   
+		this.metaModel = this.DomainModel.Bridge.MetaModel;
+		this.modelSettings = this.DomainModel.Bridge.ModelSettings;
+		this.modelSettings.CodeGenerationSettings.MappingDefinitionType = MappingDefinitionType.Attributes;
+		this.backendConfiguration = this.modelSettings.BackendConfigurationSettings.BackendConfiguration;
+		this.generateMultipleFiles = this.modelSettings.CodeGenerationSettings.GenerateMultipleFiles;
+		this.shouldGenerateContext = this.modelSettings.CodeGenerationSettings.ShouldGenerateContext;
+		if(this.modelSettings.CodeGenerationSettings.MappingDefinitionType == MappingDefinitionType.Attributes)
+		{
+			MetaModelCodeGenUtilities.ApplyCustomAttributes(this.metaModel); 
+		}
+		
+		this.utilities = new MetaModelCodeGenUtilities(LanguageContext.CreateCSharpContext());
+		this.codegenModel = utilities.GetCodeGenModel(this.metaModel);
+		this.generatedContext = utilities.GetModelContextCodeClass(this.metaModel, this.DomainModel);
+		this.templateContext = TemplateContextFactory.Create(this.Host, this.GenerationEnvironment, modelSettings.CodeGenerationSettings);
+		this.defaultContextName = this.GetContextName();
+		this.defaultNamespace = this.GetDefaultNamespace();
+	}
+
+	private void GenerateNamespaces()
+	{
+		if(!this.generateMultipleFiles)
+		{
+			this.generatedContext.ImportNamespaces.AddNamespace("System.Runtime.Serialization");
+		}
+		
+		this.GenerateUsings(this.generatedContext);		
+	}
+
+
+	private void GenerateIRepositoryInterface()
+	{
+		if(!this.generateMultipleFiles)
+		{
+			this.generatedContext.ImportNamespaces.AddNamespace("System.Runtime.Serialization");
+		}
+		this.GenerateUsings(this.generatedContext);
+
+		string @namespace = this.GetDefaultNamespace();
+		if (!String.IsNullOrEmpty(@namespace)) 
+		{
+	#>
+
+namespace <#= @namespace #>	
+{	
+<#+		
+			this.PushIndent("\t");
+		}
+#>
+public interface IRepository<TEntity, TDto> : IDisposable
+{
+    TDto FindSingle(Expression<Func<TEntity, bool>> exp);
+    IList<TDto> Find(Expression<Func<TEntity, bool>> exp);
+
+    TEntity Create(TDto entity);
+    TEntity UpdateOrCreate(TDto entity);
+    void Delete(TDto entity);
+	
+	void SaveChanges();
+}
+<#+
+		if (!String.IsNullOrEmpty(@namespace)) 
+		{
+			this.PopIndent();
+		#>
+}
+<#+		}
+	}
+	
+	private void GenerateDtoClasses()
+	{
+		this.SetDataContractAttributes();
+		foreach(Telerik.OpenAccess.CodeGeneration.CodeNamespace @namespace in this.codegenModel.Namespaces)
+		{
+			foreach(Telerik.OpenAccess.CodeGeneration.CodeClass @class in @namespace.Classes)
+			{
+				this.RemoveNavigationMembers(@class);
+				this.SetDataMemberAttributes(@class);
+				this.GeneratePerEntityFileBlock(@class as Telerik.OpenAccess.CodeGeneration.CodeElement, @namespace, defaultExtension);
+			}
+		}
+	}
+	
+	private void SetDataContractAttributes()
+	{	
+		foreach(Telerik.OpenAccess.CodeGeneration.CodeNamespace @namespace in this.codegenModel.Namespaces)
+		{
+			foreach(Telerik.OpenAccess.CodeGeneration.CodeClass @class in @namespace.Classes)
+			{
+				@class.Name = string.Concat(@class.Name, dtoNameExtension);
+				
+				@class.Attributes.Clear();
+				
+				Telerik.OpenAccess.CodeGeneration.CodeParameter nameParam = new Telerik.OpenAccess.CodeGeneration.CodeParameter("Name", @class.Name);
+				Telerik.OpenAccess.CodeGeneration.CodeAttribute dataContractAttribute = @class.CreateAttribute(nameParam);
+				dataContractAttribute.Name = "DataContract";
+				
+				@class.AddAttribute(dataContractAttribute);
+				
+				@class.ImportNamespaces.AddNamespace("System.Runtime.Serialization");
+				@class.NestedClasses.Clear();
+			}
+		}
+	}
+	
+	private void ExtractClassNames()
+	{	
+		foreach(Telerik.OpenAccess.CodeGeneration.CodeNamespace @namespace in this.codegenModel.Namespaces)
+		{
+			foreach(Telerik.OpenAccess.CodeGeneration.CodeClass @class in @namespace.Classes)
+			{
+				this.classNames.Add(@class.Name);
+			}
+		}
+	}
+	
+	private void RemoveNavigationMembers(Telerik.OpenAccess.CodeGeneration.CodeClass @class)
+	{		
+		List<Telerik.OpenAccess.CodeGeneration.CodeProperty> properties = @class.Properties as List<Telerik.OpenAccess.CodeGeneration.CodeProperty>;
+		if(properties == null)
+		{
+			return;
+		}
+		
+		for(int i = properties.Count - 1; i >= 0; i--)
+		{
+			Telerik.OpenAccess.CodeGeneration.CodeProperty prop = properties[i];
+			string propType = GetTypeStringPresentation(prop);
+			if(this.classNames.Contains(propType))
+			{
+				properties.Remove(prop);
+			}
+			
+			if(propType.StartsWith("IList<"))
+			{
+				bool addToModel = false;
+				foreach(Telerik.OpenAccess.CodeGeneration.CodeAttribute attr in prop.Attributes)
+				{
+					if("Collection".Equals(attr.Name))
+					{
+						addToModel = true;
+						break;
+					}
+				}
+				if(!addToModel)
+				{
+					properties.Remove(prop);
+					continue;
+				}
+				
+				if(!prop.Type.EndsWith(dtoNameExtension))
+				{
+					prop.Type = string.Concat(prop.Type, dtoNameExtension);
+					prop.DefaultValue = string.Concat("new List<", prop.Type, ">()");
+				}
+			}
+		}
+	}
+	
+	private void GenerateEnableClass()
+	{
+
+
+
+	}
+
+	private void GenerateRepositoryClasses()
+	{
+		Telerik.OpenAccess.CodeGeneration.CodeNamespace contextNamespace = this.GetCodeNamespace(this.generatedContext.Namespace);
+		//Telerik.OpenAccess.CodeGeneration.CodeInterface baseInterface = this.CreateGenericRepositoryInterface(contextNamespace);
+		
+		foreach(Telerik.OpenAccess.CodeGeneration.CodeNamespace @namespace in this.codegenModel.Namespaces)
+		{			
+			foreach(Telerik.OpenAccess.CodeGeneration.CodeClass @class in @namespace.Classes)
+			{
+				this.RemoveNavigationMembers(@class);
+				
+				string repositoryClassName = string.Format("{0}Repository", @class.Name);
+				string baseInterfaceName = string.Concat("ISE.Framework.Server.Core.DataAccessBase."+repositoryInterfaceName, string.Format("<{0}, {0}{1}>", @class.Name, dtoNameExtension));
+				
+				Telerik.OpenAccess.CodeGeneration.CodeInterface baseInterface = contextNamespace.CreateInterface(baseInterfaceName);
+				Telerik.OpenAccess.CodeGeneration.CodeClass repositoryClass = @namespace.CreateClass(repositoryClassName);
+				
+				repositoryClass.AddInterface(baseInterface);
+				repositoryClass.Namespace = @class.Namespace;
+				if(!string.IsNullOrEmpty(contextNamespace.Name))
+				{
+					repositoryClass.ImportNamespaces.AddNamespace(contextNamespace.Name);
+				}
+				
+				this.GenerateRepositoryClassFileBlock(repositoryClass as Telerik.OpenAccess.CodeGeneration.CodeElement, @namespace, defaultExtension);
+			}
+		}
+	}
+	
+	private void GenerateRepositoryClassFileBlock(Telerik.OpenAccess.CodeGeneration.CodeElement element, Telerik.OpenAccess.CodeGeneration.CodeNamespace @namespace, string defaultExtension)
+	{
+		this.templateContext.StartNewFileBlock(Path.ChangeExtension(element.Name, defaultExtension), @namespace.Name); 
+
+		string entityNamespace = string.Empty;
+		entityNamespace = !string.IsNullOrEmpty(@namespace.Name) ? @namespace.Name : this.GetEntityNamespace(element as Telerik.OpenAccess.CodeGeneration.CodeInterface);
+		if(this.generateMultipleFiles)
+		{
+			this.GenerateUsings(element as Telerik.OpenAccess.CodeGeneration.CodeInterface);	
+		}
+			if (!String.IsNullOrEmpty(entityNamespace)) 
+			{
+		#>
+
+namespace <#=entityNamespace #>	
+{
+<#+  		}
+		this.GenerateRepositoryClass(((Telerik.OpenAccess.CodeGeneration.CodeClass)element));
+
+		if (!string.IsNullOrEmpty(entityNamespace)) 
+		{
+	#>
+}
+<#+		}
+		this.templateContext.EndBlock();
+	}
+	
+	private void GenerateRepositoryClass(Telerik.OpenAccess.CodeGeneration.CodeClass codeClass)
+	{
+		//System.Diagnostics.Debugger.Break();
+		this.PushIndent("\t");
+		this.GenerateSummary(codeClass.Summary);
+		this.GenerateComments(codeClass.Comments);	
+		
+		string classSignature = GetClassSignature(codeClass);
+	
+		this.GenerateCustomAttributes(codeClass.Attributes);
+		this.WriteLine(classSignature);
+		this.WriteLine(classOpenToken);
+	
+		//implement the IRepository<TEntity, TDtoEntity> interface
+		this.PushIndent("\t");
+		
+		string oaClassName = codeClass.Name.Substring(0, codeClass.Name.LastIndexOf(repositoryNameExtension));
+		Telerik.OpenAccess.CodeGeneration.CodeClass oaClass = this.GetClassFromNamespace(codeClass.Namespace, oaClassName);
+
+		this.AddContextProperty();
+		this.AddFindSingleMethod(oaClass);
+		this.AddFindMethod(oaClass);
+		this.AddGetIQueryableMethod(oaClass);
+		this.AddGetCountMethod(oaClass);
+		this.AddCreateEntityMethod(oaClass);
+		this.AddUpdateOrCreateEntityMethod(oaClass);
+		this.AddDeleteEntityMethod(oaClass);
+		this.AddSaveChangesMethod();
+		this.AddGetDtoMethod(oaClass, oaClassName);
+		this.AddGetDtosMethod(oaClassName);
+		this.AddDisposeMethod();
+		
+		this.PopIndent();
+		this.WriteLine(classCloseToken);
+		this.PopIndent();
+	}
+	
+	private void SetDataMemberAttributes(Telerik.OpenAccess.CodeGeneration.CodeClass @class)
+	{	
+		foreach(Telerik.OpenAccess.CodeGeneration.CodeProperty prop in @class.Properties)
+		{
+			prop.HasGetter = true;
+			prop.HasSetter = true;
+
+			prop.Attributes.Clear();
+			Telerik.OpenAccess.CodeGeneration.CodeParameter nameParam = new Telerik.OpenAccess.CodeGeneration.CodeParameter("Name", prop.Name);
+			Telerik.OpenAccess.CodeGeneration.CodeParameter isRequiredParam = new Telerik.OpenAccess.CodeGeneration.CodeParameter("IsRequired", "false", "bool");
+			Telerik.OpenAccess.CodeGeneration.CodeAttribute dataMemberAttribute = prop.CreateAttribute(nameParam, isRequiredParam);
+			dataMemberAttribute.Name = "DataMember";
+
+			prop.Attributes.Add(dataMemberAttribute);
+		}
+	}
+
+	private Telerik.OpenAccess.CodeGeneration.CodeNamespace GetCodeNamespace(string namespaceName)
+	{
+		foreach (Telerik.OpenAccess.CodeGeneration.CodeNamespace item in this.codegenModel.Namespaces)
+		{
+			if (item.Name == namespaceName)
+			{
+				return item;
+			}
+		}
+		return null;
+	}
+	
+	private Telerik.OpenAccess.CodeGeneration.CodeClass GetClassFromNamespace(string namespaceName, string className)
+	{
+		Telerik.OpenAccess.CodeGeneration.CodeNamespace @namespace = this.GetCodeNamespace(namespaceName);
+		foreach(Telerik.OpenAccess.CodeGeneration.CodeClass @class in @namespace.Classes)
+		{
+			if(@class.Name.Equals(className))
+			{
+				return @class;	
+			}
+		}
+		return null;
+	}
+
+	private bool IsIdentityProperty(Telerik.OpenAccess.CodeGeneration.CodeProperty codeProperty)
+	{
+		foreach(Telerik.OpenAccess.CodeGeneration.CodeAttribute attr in codeProperty.Attributes)
+		{
+			if("Column".Equals(attr.Name))
+			{
+				foreach(Telerik.OpenAccess.CodeGeneration.CodeParameter param in attr.Parameters)
+				{
+					if("IsPrimaryKey".Equals(param.Name) && 
+						"true".Equals(param.Value, StringComparison.InvariantCultureIgnoreCase))
+					{
+						return true;
+					}
+				}
+			}
+		}
+		return false;
+	}
+
+	private List<Telerik.OpenAccess.CodeGeneration.CodeProperty> GetIdentityProperties(Telerik.OpenAccess.CodeGeneration.CodeClass codeClass)
+	{
+		List<Telerik.OpenAccess.CodeGeneration.CodeProperty> identityProperties = new List<Telerik.OpenAccess.CodeGeneration.CodeProperty>();
+		foreach(Telerik.OpenAccess.CodeGeneration.CodeProperty codeProperty in codeClass.Properties)
+		{
+			if(this.IsIdentityProperty(codeProperty))
+			{
+				identityProperties.Add(codeProperty);	
+			}
+		}
+		return identityProperties;
+	}
+	
+	private void AddContextProperty()
+	{
+#>
+private <#= this.generatedContext.Name #> context;
+
+public <#= this.generatedContext.Name #> Context
+{
+    get
+    {
+        if (this.context == null)
+        {
+            this.context = new <#= this.generatedContext.Name #>();
+        }
+        return this.context;
+    }
+}
+
+<#+ 	
+	}
+
+	private void AddGetDtoMethod(Telerik.OpenAccess.CodeGeneration.CodeClass codeClass, string oaClassName)
+	{
+		string className = string.Concat(codeClass.Name, dtoNameExtension);
+	#>
+public static <#= className #> GetDto(<#= oaClassName #> oaObj)
+{
+	if(oaObj == null)
+	{
+		return null;
+	}
+	<#= className #> dtObj = new <#= className #>();
+<#+
+		foreach(Telerik.OpenAccess.CodeGeneration.CodeProperty prop in codeClass.Properties)
+		{
+			string propType = GetTypeStringPresentation(prop);
+			string referencedTypeName = prop.Type.EndsWith(dtoNameExtension) ?  prop.Type.Substring(0, prop.Type.LastIndexOf(dtoNameExtension)) : prop.Type;
+			if(propType.StartsWith("IList<"))
+			{
+	             
+			}
+			else
+			{
+				if (prop.HasGetter)
+				{
+					WriteLine(string.Format("\tdtObj.{0} = oaObj.{0};", prop.Name));
+				}
+			}
+		}
+	#>
+	
+	return dtObj;
+}
+
+<#+
+	}
+		
+	private void AddGetDtosMethod(string oaClassName)
+	{
+		string className = string.Concat(oaClassName, dtoNameExtension);
+	#>
+public static IList<<#= className #>> GetDtos(IQueryable<<#= oaClassName #>> oaObjects)
+{
+	IList<<#= className #>> dtObjects = new List<<#= className #>>();
+	foreach(<#= oaClassName #> oaObj in oaObjects)
+	{
+		dtObjects.Add(GetDto(oaObj));
+	}
+	return dtObjects;
+}
+
+<#+
+	}
+
+	private void AddFindSingleMethod(Telerik.OpenAccess.CodeGeneration.CodeClass codeClass)
+	{
+		string dtoClassName = string.Concat(codeClass.Name, dtoNameExtension);
+#>
+public <#= dtoClassName #> FindSingle(Expression<Func<<#= codeClass.Name #>, bool>> expression)
+{
+    if (expression == null)
+    {
+        expression = (x) => true;
+    }
+    <#= codeClass.Name #> oaObj = this.Context.GetAll<<#= codeClass.Name #>>().Where(expression).FirstOrDefault();
+
+    return GetDto(oaObj);
+}
+
+<#+ 
+	}
+
+	private void AddFindMethod(Telerik.OpenAccess.CodeGeneration.CodeClass codeClass)
+	{
+		string dtoClassName = string.Concat(codeClass.Name, dtoNameExtension);
+#>
+public IList<<#= dtoClassName #>> Find(Expression<Func<<#= codeClass.Name #>, bool>> expression)
+{
+    if (expression == null)
+    {
+        expression = (x) => true;
+    }
+    IQueryable<<#= codeClass.Name #>> oaObjects = this.Context.GetAll<<#= codeClass.Name #>>().Where(expression);
+
+    return GetDtos(oaObjects);
+}
+
+<#+ 
+	}
+
+	private void AddGetIQueryableMethod(Telerik.OpenAccess.CodeGeneration.CodeClass codeClass)
+	{
+		string dtoClassName = string.Concat(codeClass.Name, dtoNameExtension);
+#>
+public IQueryable<<#= codeClass.Name #>> GetQueryable()
+{    
+    IQueryable<<#= codeClass.Name #>> oaObjects = this.Context.GetAll<<#= codeClass.Name #>>();
+
+    return oaObjects;
+}
+
+<#+ 
+	}
+
+	private void AddGetCountMethod(Telerik.OpenAccess.CodeGeneration.CodeClass codeClass)
+	{
+		string dtoClassName = string.Concat(codeClass.Name, dtoNameExtension);
+#>
+public long Count(Expression<Func<<#= codeClass.Name #>, bool>> expression)
+{
+    if (expression == null)
+    {
+        expression = (x) => true;
+    }
+   long count = this.Context.GetAll<<#= codeClass.Name #>>().Count(expression);
+
+    return count;
+}
+
+<#+ 
+	}
+
+	private void AddCreateEntityMethod(Telerik.OpenAccess.CodeGeneration.CodeClass codeClass)
+	{
+		string dtoClassName = string.Concat(codeClass.Name, dtoNameExtension);
+	#>
+internal static <#= codeClass.Name #> CreateInternal(<#=dtoClassName#> dtObj, <#= this.generatedContext.Name #> context)
+{
+	if(dtObj == null)
+	{
+		return null;
+	}
+	<#=codeClass.Name#> oaObj = new <#= codeClass.Name #>();
+
+<#+
+		foreach(Telerik.OpenAccess.CodeGeneration.CodeProperty prop in codeClass.Properties)
+		{
+			string propType = GetTypeStringPresentation(prop);
+			string referencedTypeDtoName = prop.Type.EndsWith(dtoNameExtension) ? prop.Type : string.Concat(prop.Type, dtoNameExtension);
+			string referencedTypeName = referencedTypeDtoName.Substring(0, referencedTypeDtoName.LastIndexOf(dtoNameExtension));
+			
+			if(propType.StartsWith("IList<"))
+			{
+ 	
+			}
+			else
+			{
+				if (prop.HasSetter)
+				{
+					WriteLine(string.Format("\toaObj.{0} = dtObj.{0};", prop.Name));
+				}
+			}
+		}
+#>
+
+	context.Add(oaObj);
+	return oaObj;
+}
+
+public <#= codeClass.Name #> Create(<#=dtoClassName#> dtObj)
+{
+	return CreateInternal(dtObj, this.Context);
+}
+
+<#+
+	}
+
+	private void AddDeleteEntityMethod(Telerik.OpenAccess.CodeGeneration.CodeClass codeClass)
+	{
+		string dtoClassName = string.Concat(codeClass.Name, dtoNameExtension);
+		
+		List<Telerik.OpenAccess.CodeGeneration.CodeProperty> idProperties = this.GetIdentityProperties(codeClass);
+		if(idProperties.Count == 0)
+		{
+			idProperties.AddRange(codeClass.Properties);	
+		}
+	#>
+public void Delete(<#=dtoClassName#> dtObj)
+{
+	if(dtObj == null)
+	{
+		return;
+	}
+	<#=codeClass.Name#> oaObj = (from t in this.Context.GetAll<<#= codeClass.Name #>>() where
+<#+
+		for(int i = 0; i<idProperties.Count; i++)
+		{
+			#>						t.<#= idProperties[i].Name #> == dtObj.<#= idProperties[i].Name #><#+
+			if(i < idProperties.Count -1)
+			{
+				this.WriteLine(" &&");
+			}
+		}
+	#>
+	
+						select t).FirstOrDefault();
+	if (oaObj != null)
+	{
+		this.Context.Delete(oaObj);
+	}
+}
+
+<#+
+	}
+
+	private void AddUpdateOrCreateEntityMethod(Telerik.OpenAccess.CodeGeneration.CodeClass codeClass)
+	{
+		string dtoClassName = string.Concat(codeClass.Name, dtoNameExtension);
+		
+		List<Telerik.OpenAccess.CodeGeneration.CodeProperty> idProperties = this.GetIdentityProperties(codeClass);
+		if(idProperties.Count == 0)
+		{
+			idProperties.AddRange(codeClass.Properties);	
+		}
+	#>
+internal static <#= codeClass.Name #> UpdateOrCreateInternal(<#=dtoClassName#> dtObj, <#= this.generatedContext.Name #> context)
+{
+	if(dtObj == null)
+	{
+		return null;
+	}
+	<#=codeClass.Name#> oaObj = (from t in context.GetAll<<#= codeClass.Name #>>() where
+<#+
+		for(int i = 0; i<idProperties.Count; i++)
+		{
+			#>					t.<#= idProperties[i].Name #> == dtObj.<#= idProperties[i].Name #><#+
+			if(i < idProperties.Count -1)
+			{
+				this.WriteLine(" &&");
+			}
+		}
+	#>
+	
+						select t).FirstOrDefault();
+	if (oaObj == null)
+	{
+		return CreateInternal(dtObj, context);
+	}
+<#+
+		foreach(Telerik.OpenAccess.CodeGeneration.CodeProperty prop in codeClass.Properties)
+		{
+			if(!idProperties.Contains(prop))
+			{
+				string propType = GetTypeStringPresentation(prop);
+				string referencedTypeDtoName = prop.Type.EndsWith(dtoNameExtension) ? prop.Type : string.Concat(prop.Type, dtoNameExtension);
+				string referencedTypeName = referencedTypeDtoName.Substring(0, referencedTypeDtoName.LastIndexOf(dtoNameExtension));
+				
+				if(propType.StartsWith("IList<"))
+				{
+
+				}
+				else
+				{
+					if (prop.HasSetter)
+					{
+			#>	oaObj.<#= prop.Name #> = dtObj.<#= prop.Name #>;
+<#+
+					}
+				}
+			}
+		}
+#>
+	return oaObj;
+}
+
+public <#= codeClass.Name #> UpdateOrCreate(<#=dtoClassName#> dtObj)
+{
+	return UpdateOrCreateInternal(dtObj, this.Context);
+}
+
+<#+
+	}
+
+	private void AddSaveChangesMethod()
+	{
+#>
+public void SaveChanges()
+{
+	this.Context.SaveChanges();
+}
+
+<#+
+	}
+
+	private void AddDisposeMethod()
+	{
+#>
+public void Dispose()
+{
+	if(this.context != null)
+	{
+		this.context.Dispose();
+	}
+}
+<#+
+	}
+#>

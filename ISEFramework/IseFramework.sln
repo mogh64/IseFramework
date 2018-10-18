@@ -1,0 +1,295 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30723.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ISE.Framework.Server.Core", "ISE.Framework.Core\ISE.Framework.Server.Core.csproj", "{0EA8AAD7-FDDB-45C4-9A2D-A11B54211336}"
+	ProjectSection(ProjectDependencies) = postProject
+		{4A0CB475-FE83-4FF8-B2CF-A8C88A2DE1D1} = {4A0CB475-FE83-4FF8-B2CF-A8C88A2DE1D1}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ISE.Framework.Common", "ISE.Framework.Common\ISE.Framework.Common.csproj", "{B777A540-A025-4C04-96B9-C9BEA1BC891E}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F969A551-EE0E-4129-9E88-AC5291985589} = {F969A551-EE0E-4129-9E88-AC5291985589}
+		{4A0CB475-FE83-4FF8-B2CF-A8C88A2DE1D1} = {4A0CB475-FE83-4FF8-B2CF-A8C88A2DE1D1}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ISE.Framework.Utility", "ISE.Framework.Utility\ISE.Framework.Utility.csproj", "{4A0CB475-FE83-4FF8-B2CF-A8C88A2DE1D1}"
+EndProject
+Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "Ise.Framework.Architecture", "Ise.Framework.Architecture\Ise.Framework.Architecture.modelproj", "{74905EFA-518B-49C1-9739-35DF97289AB9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LoggerFacades", "LoggerFacades", "{96EEB645-D4E3-4D01-90AF-09FC41F15EB8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SLF.BitFactoryFacade", "LoggerFacades\SLF.BitFactoryFacade\SLF.BitFactoryFacade.csproj", "{E7351D79-25C4-4E91-96EF-DB3C740592CF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SLF.EntLib20Facade", "LoggerFacades\SLF.EntLib20Facade\SLF.EntLib20Facade.csproj", "{A75656D8-3D9E-4A21-BDBC-F3EC3A2E41FF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SLF.EntLib41Facade", "LoggerFacades\SLF.EntLib41Facade\SLF.EntLib41Facade.csproj", "{598BDF43-E782-40DC-B38E-5545457E97E7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SLF.Log4netFacade", "LoggerFacades\SLF.Log4netFacade\SLF.Log4netFacade.csproj", "{67C30AFE-0952-4C45-B1BA-38EA1CBA6B42}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SLF.NLogFacade", "LoggerFacades\SLF.NLogFacade\SLF.NLogFacade.csproj", "{AB8A3AB3-06C9-4D74-BE75-3CC3E72287A4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Framework", "Framework", "{56FAE1CC-76BC-4893-8D28-208E8F35FFD9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ISE.Framework.Server.Common", "ISE.Framework.Server.Common\ISE.Framework.Server.Common.csproj", "{E3A6894A-134B-44C9-B479-D5B36958D296}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SLF", "SLF\SLF.csproj", "{F969A551-EE0E-4129-9E88-AC5291985589}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IseFrameworkUnitTest", "IseFrameworkUnitTest\IseFrameworkUnitTest.csproj", "{96547D56-814A-450C-A0AA-D3F416B0EEEB}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F969A551-EE0E-4129-9E88-AC5291985589} = {F969A551-EE0E-4129-9E88-AC5291985589}
+		{4A0CB475-FE83-4FF8-B2CF-A8C88A2DE1D1} = {4A0CB475-FE83-4FF8-B2CF-A8C88A2DE1D1}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ServiceRouter", "ServiceRouter", "{BCA3516E-3094-4281-8292-A8BD4EBB5CE2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Router.Contracts", "Router.Contracts\Router.Contracts.csproj", "{DBF1483D-712F-480C-888A-1683FE6660CA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Router", "Router\Router.csproj", "{10C41BF1-1246-43C5-96E7-96F2F6C7FF4A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RouterHost", "RouterHost\RouterHost.csproj", "{E5AEE4F6-D82B-482F-9E68-DD74FC5C8F01}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SecurityTokenService", "SecurityTokenService", "{53D5DB67-9041-48FB-BD00-47594A6FEF35}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "STSHost", "STSHost\STSHost.csproj", "{CF746000-69FF-4506-A0DD-8761CF1397ED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "STS", "STS\STS.csproj", "{3F106EBA-C2CA-47D0-9390-79464EAAE1D3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Constants", "Constants\Constants.csproj", "{7E2A3D19-CE93-4C41-A7F5-6B6C8B1E2634}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApplicationFrameworkTest", "WindowsFormsApplicationFrameworkTest\WindowsFormsApplicationFrameworkTest.csproj", "{8836CF74-BFAA-4D05-A6F2-32BF4DADA251}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ISE.Framework.Client.Common", "ISE.Framework.Client.Common\ISE.Framework.Client.Common.csproj", "{B69F3D73-9C82-4396-A862-80AD095692E7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ISE.Framework.Client.Win", "ISE.Framework.Client.Win\ISE.Framework.Client.Win.csproj", "{DBB74EC9-1140-4D20-8879-D407A80523C6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ISE.Framework.Client.Web", "ISE.Framework.Client.Web\ISE.Framework.Client.Web.csproj", "{068459A4-5692-4739-AB63-415054764F10}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RouterWindowsHost", "RouterWindowsHost\RouterWindowsHost.csproj", "{F38F56CC-98CB-4653-91D4-21EF7A9EBA8A}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 24
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://isesrv12:8080/tfs/isecollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Ise.Framework.Architecture\\Ise.Framework.Architecture.modelproj
+		SccProjectTopLevelParentUniqueName1 = IseFramework.sln
+		SccProjectName1 = Ise.Framework.Architecture
+		SccLocalPath1 = Ise.Framework.Architecture
+		SccProjectUniqueName2 = ISE.Framework.Common\\ISE.Framework.Common.csproj
+		SccProjectTopLevelParentUniqueName2 = IseFramework.sln
+		SccProjectName2 = ISE.Framework.Common
+		SccLocalPath2 = ISE.Framework.Common
+		SccProjectUniqueName3 = ISE.Framework.Core\\ISE.Framework.Server.Core.csproj
+		SccProjectTopLevelParentUniqueName3 = IseFramework.sln
+		SccProjectName3 = ISE.Framework.Core
+		SccLocalPath3 = ISE.Framework.Core
+		SccProjectUniqueName4 = ISE.Framework.Server.Common\\ISE.Framework.Server.Common.csproj
+		SccProjectTopLevelParentUniqueName4 = IseFramework.sln
+		SccProjectName4 = ISE.Framework.Server.Common
+		SccLocalPath4 = ISE.Framework.Server.Common
+		SccProjectUniqueName5 = ISE.Framework.Utility\\ISE.Framework.Utility.csproj
+		SccProjectTopLevelParentUniqueName5 = IseFramework.sln
+		SccProjectName5 = ISE.Framework.Utility
+		SccLocalPath5 = ISE.Framework.Utility
+		SccProjectUniqueName6 = LoggerFacades\\SLF.BitFactoryFacade\\SLF.BitFactoryFacade.csproj
+		SccProjectTopLevelParentUniqueName6 = IseFramework.sln
+		SccProjectName6 = LoggerFacades/SLF.BitFactoryFacade
+		SccLocalPath6 = LoggerFacades\\SLF.BitFactoryFacade
+		SccProjectUniqueName7 = LoggerFacades\\SLF.EntLib20Facade\\SLF.EntLib20Facade.csproj
+		SccProjectTopLevelParentUniqueName7 = IseFramework.sln
+		SccProjectName7 = LoggerFacades/SLF.EntLib20Facade
+		SccLocalPath7 = LoggerFacades\\SLF.EntLib20Facade
+		SccProjectUniqueName8 = LoggerFacades\\SLF.EntLib41Facade\\SLF.EntLib41Facade.csproj
+		SccProjectTopLevelParentUniqueName8 = IseFramework.sln
+		SccProjectName8 = LoggerFacades/SLF.EntLib41Facade
+		SccLocalPath8 = LoggerFacades\\SLF.EntLib41Facade
+		SccProjectUniqueName9 = LoggerFacades\\SLF.Log4netFacade\\SLF.Log4netFacade.csproj
+		SccProjectTopLevelParentUniqueName9 = IseFramework.sln
+		SccProjectName9 = LoggerFacades/SLF.Log4netFacade
+		SccLocalPath9 = LoggerFacades\\SLF.Log4netFacade
+		SccProjectUniqueName10 = LoggerFacades\\SLF.NLogFacade\\SLF.NLogFacade.csproj
+		SccProjectTopLevelParentUniqueName10 = IseFramework.sln
+		SccProjectName10 = LoggerFacades/SLF.NLogFacade
+		SccLocalPath10 = LoggerFacades\\SLF.NLogFacade
+		SccProjectUniqueName11 = SLF\\SLF.csproj
+		SccProjectTopLevelParentUniqueName11 = IseFramework.sln
+		SccProjectName11 = SLF
+		SccLocalPath11 = SLF
+		SccProjectUniqueName12 = IseFrameworkUnitTest\\IseFrameworkUnitTest.csproj
+		SccProjectName12 = IseFrameworkUnitTest
+		SccLocalPath12 = IseFrameworkUnitTest
+		SccProjectUniqueName13 = Router.Contracts\\Router.Contracts.csproj
+		SccProjectTopLevelParentUniqueName13 = IseFramework.sln
+		SccProjectName13 = Router.Contracts
+		SccLocalPath13 = Router.Contracts
+		SccProjectUniqueName14 = Router\\Router.csproj
+		SccProjectTopLevelParentUniqueName14 = IseFramework.sln
+		SccProjectName14 = Router
+		SccLocalPath14 = Router
+		SccProjectUniqueName15 = RouterHost\\RouterHost.csproj
+		SccProjectTopLevelParentUniqueName15 = IseFramework.sln
+		SccProjectName15 = RouterHost
+		SccLocalPath15 = RouterHost
+		SccProjectUniqueName16 = STSHost\\STSHost.csproj
+		SccProjectTopLevelParentUniqueName16 = IseFramework.sln
+		SccProjectName16 = STSHost
+		SccLocalPath16 = STSHost
+		SccProjectUniqueName17 = STS\\STS.csproj
+		SccProjectTopLevelParentUniqueName17 = IseFramework.sln
+		SccProjectName17 = STS
+		SccLocalPath17 = STS
+		SccProjectUniqueName18 = Constants\\Constants.csproj
+		SccProjectTopLevelParentUniqueName18 = IseFramework.sln
+		SccProjectName18 = Constants
+		SccLocalPath18 = Constants
+		SccProjectUniqueName19 = WindowsFormsApplicationFrameworkTest\\WindowsFormsApplicationFrameworkTest.csproj
+		SccProjectName19 = WindowsFormsApplicationFrameworkTest
+		SccLocalPath19 = WindowsFormsApplicationFrameworkTest
+		SccProjectUniqueName20 = ISE.Framework.Client.Common\\ISE.Framework.Client.Common.csproj
+		SccProjectTopLevelParentUniqueName20 = IseFramework.sln
+		SccProjectName20 = ISE.Framework.Client.Common
+		SccLocalPath20 = ISE.Framework.Client.Common
+		SccProjectUniqueName21 = ISE.Framework.Client.Win\\ISE.Framework.Client.Win.csproj
+		SccProjectTopLevelParentUniqueName21 = IseFramework.sln
+		SccProjectName21 = ISE.Framework.Client.Win
+		SccLocalPath21 = ISE.Framework.Client.Win
+		SccProjectUniqueName22 = ISE.Framework.Client.Web\\ISE.Framework.Client.Web.csproj
+		SccProjectTopLevelParentUniqueName22 = IseFramework.sln
+		SccProjectName22 = ISE.Framework.Client.Web
+		SccLocalPath22 = ISE.Framework.Client.Web
+		SccProjectUniqueName23 = RouterWindowsHost\\RouterWindowsHost.csproj
+		SccProjectTopLevelParentUniqueName23 = IseFramework.sln
+		SccProjectName23 = RouterWindowsHost
+		SccLocalPath23 = RouterWindowsHost
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0EA8AAD7-FDDB-45C4-9A2D-A11B54211336}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0EA8AAD7-FDDB-45C4-9A2D-A11B54211336}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0EA8AAD7-FDDB-45C4-9A2D-A11B54211336}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0EA8AAD7-FDDB-45C4-9A2D-A11B54211336}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B777A540-A025-4C04-96B9-C9BEA1BC891E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B777A540-A025-4C04-96B9-C9BEA1BC891E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B777A540-A025-4C04-96B9-C9BEA1BC891E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B777A540-A025-4C04-96B9-C9BEA1BC891E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A0CB475-FE83-4FF8-B2CF-A8C88A2DE1D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A0CB475-FE83-4FF8-B2CF-A8C88A2DE1D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A0CB475-FE83-4FF8-B2CF-A8C88A2DE1D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A0CB475-FE83-4FF8-B2CF-A8C88A2DE1D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74905EFA-518B-49C1-9739-35DF97289AB9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74905EFA-518B-49C1-9739-35DF97289AB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74905EFA-518B-49C1-9739-35DF97289AB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74905EFA-518B-49C1-9739-35DF97289AB9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E7351D79-25C4-4E91-96EF-DB3C740592CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7351D79-25C4-4E91-96EF-DB3C740592CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7351D79-25C4-4E91-96EF-DB3C740592CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7351D79-25C4-4E91-96EF-DB3C740592CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A75656D8-3D9E-4A21-BDBC-F3EC3A2E41FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A75656D8-3D9E-4A21-BDBC-F3EC3A2E41FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A75656D8-3D9E-4A21-BDBC-F3EC3A2E41FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A75656D8-3D9E-4A21-BDBC-F3EC3A2E41FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{598BDF43-E782-40DC-B38E-5545457E97E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{598BDF43-E782-40DC-B38E-5545457E97E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{598BDF43-E782-40DC-B38E-5545457E97E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{598BDF43-E782-40DC-B38E-5545457E97E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67C30AFE-0952-4C45-B1BA-38EA1CBA6B42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67C30AFE-0952-4C45-B1BA-38EA1CBA6B42}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67C30AFE-0952-4C45-B1BA-38EA1CBA6B42}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67C30AFE-0952-4C45-B1BA-38EA1CBA6B42}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB8A3AB3-06C9-4D74-BE75-3CC3E72287A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB8A3AB3-06C9-4D74-BE75-3CC3E72287A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB8A3AB3-06C9-4D74-BE75-3CC3E72287A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB8A3AB3-06C9-4D74-BE75-3CC3E72287A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3A6894A-134B-44C9-B479-D5B36958D296}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3A6894A-134B-44C9-B479-D5B36958D296}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3A6894A-134B-44C9-B479-D5B36958D296}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3A6894A-134B-44C9-B479-D5B36958D296}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F969A551-EE0E-4129-9E88-AC5291985589}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F969A551-EE0E-4129-9E88-AC5291985589}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F969A551-EE0E-4129-9E88-AC5291985589}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F969A551-EE0E-4129-9E88-AC5291985589}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96547D56-814A-450C-A0AA-D3F416B0EEEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96547D56-814A-450C-A0AA-D3F416B0EEEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96547D56-814A-450C-A0AA-D3F416B0EEEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96547D56-814A-450C-A0AA-D3F416B0EEEB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DBF1483D-712F-480C-888A-1683FE6660CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBF1483D-712F-480C-888A-1683FE6660CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBF1483D-712F-480C-888A-1683FE6660CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBF1483D-712F-480C-888A-1683FE6660CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10C41BF1-1246-43C5-96E7-96F2F6C7FF4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10C41BF1-1246-43C5-96E7-96F2F6C7FF4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10C41BF1-1246-43C5-96E7-96F2F6C7FF4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10C41BF1-1246-43C5-96E7-96F2F6C7FF4A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5AEE4F6-D82B-482F-9E68-DD74FC5C8F01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5AEE4F6-D82B-482F-9E68-DD74FC5C8F01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5AEE4F6-D82B-482F-9E68-DD74FC5C8F01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5AEE4F6-D82B-482F-9E68-DD74FC5C8F01}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF746000-69FF-4506-A0DD-8761CF1397ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF746000-69FF-4506-A0DD-8761CF1397ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF746000-69FF-4506-A0DD-8761CF1397ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF746000-69FF-4506-A0DD-8761CF1397ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F106EBA-C2CA-47D0-9390-79464EAAE1D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F106EBA-C2CA-47D0-9390-79464EAAE1D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F106EBA-C2CA-47D0-9390-79464EAAE1D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F106EBA-C2CA-47D0-9390-79464EAAE1D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E2A3D19-CE93-4C41-A7F5-6B6C8B1E2634}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E2A3D19-CE93-4C41-A7F5-6B6C8B1E2634}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E2A3D19-CE93-4C41-A7F5-6B6C8B1E2634}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E2A3D19-CE93-4C41-A7F5-6B6C8B1E2634}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8836CF74-BFAA-4D05-A6F2-32BF4DADA251}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8836CF74-BFAA-4D05-A6F2-32BF4DADA251}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8836CF74-BFAA-4D05-A6F2-32BF4DADA251}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8836CF74-BFAA-4D05-A6F2-32BF4DADA251}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B69F3D73-9C82-4396-A862-80AD095692E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B69F3D73-9C82-4396-A862-80AD095692E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B69F3D73-9C82-4396-A862-80AD095692E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B69F3D73-9C82-4396-A862-80AD095692E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DBB74EC9-1140-4D20-8879-D407A80523C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBB74EC9-1140-4D20-8879-D407A80523C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBB74EC9-1140-4D20-8879-D407A80523C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBB74EC9-1140-4D20-8879-D407A80523C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{068459A4-5692-4739-AB63-415054764F10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{068459A4-5692-4739-AB63-415054764F10}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{068459A4-5692-4739-AB63-415054764F10}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{068459A4-5692-4739-AB63-415054764F10}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F38F56CC-98CB-4653-91D4-21EF7A9EBA8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F38F56CC-98CB-4653-91D4-21EF7A9EBA8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F38F56CC-98CB-4653-91D4-21EF7A9EBA8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F38F56CC-98CB-4653-91D4-21EF7A9EBA8A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0EA8AAD7-FDDB-45C4-9A2D-A11B54211336} = {56FAE1CC-76BC-4893-8D28-208E8F35FFD9}
+		{B777A540-A025-4C04-96B9-C9BEA1BC891E} = {56FAE1CC-76BC-4893-8D28-208E8F35FFD9}
+		{4A0CB475-FE83-4FF8-B2CF-A8C88A2DE1D1} = {56FAE1CC-76BC-4893-8D28-208E8F35FFD9}
+		{74905EFA-518B-49C1-9739-35DF97289AB9} = {56FAE1CC-76BC-4893-8D28-208E8F35FFD9}
+		{96EEB645-D4E3-4D01-90AF-09FC41F15EB8} = {56FAE1CC-76BC-4893-8D28-208E8F35FFD9}
+		{E7351D79-25C4-4E91-96EF-DB3C740592CF} = {96EEB645-D4E3-4D01-90AF-09FC41F15EB8}
+		{A75656D8-3D9E-4A21-BDBC-F3EC3A2E41FF} = {96EEB645-D4E3-4D01-90AF-09FC41F15EB8}
+		{598BDF43-E782-40DC-B38E-5545457E97E7} = {96EEB645-D4E3-4D01-90AF-09FC41F15EB8}
+		{67C30AFE-0952-4C45-B1BA-38EA1CBA6B42} = {96EEB645-D4E3-4D01-90AF-09FC41F15EB8}
+		{AB8A3AB3-06C9-4D74-BE75-3CC3E72287A4} = {96EEB645-D4E3-4D01-90AF-09FC41F15EB8}
+		{E3A6894A-134B-44C9-B479-D5B36958D296} = {56FAE1CC-76BC-4893-8D28-208E8F35FFD9}
+		{F969A551-EE0E-4129-9E88-AC5291985589} = {56FAE1CC-76BC-4893-8D28-208E8F35FFD9}
+		{BCA3516E-3094-4281-8292-A8BD4EBB5CE2} = {56FAE1CC-76BC-4893-8D28-208E8F35FFD9}
+		{DBF1483D-712F-480C-888A-1683FE6660CA} = {BCA3516E-3094-4281-8292-A8BD4EBB5CE2}
+		{10C41BF1-1246-43C5-96E7-96F2F6C7FF4A} = {BCA3516E-3094-4281-8292-A8BD4EBB5CE2}
+		{E5AEE4F6-D82B-482F-9E68-DD74FC5C8F01} = {BCA3516E-3094-4281-8292-A8BD4EBB5CE2}
+		{53D5DB67-9041-48FB-BD00-47594A6FEF35} = {56FAE1CC-76BC-4893-8D28-208E8F35FFD9}
+		{CF746000-69FF-4506-A0DD-8761CF1397ED} = {53D5DB67-9041-48FB-BD00-47594A6FEF35}
+		{3F106EBA-C2CA-47D0-9390-79464EAAE1D3} = {53D5DB67-9041-48FB-BD00-47594A6FEF35}
+		{7E2A3D19-CE93-4C41-A7F5-6B6C8B1E2634} = {53D5DB67-9041-48FB-BD00-47594A6FEF35}
+		{B69F3D73-9C82-4396-A862-80AD095692E7} = {56FAE1CC-76BC-4893-8D28-208E8F35FFD9}
+		{DBB74EC9-1140-4D20-8879-D407A80523C6} = {56FAE1CC-76BC-4893-8D28-208E8F35FFD9}
+		{068459A4-5692-4739-AB63-415054764F10} = {56FAE1CC-76BC-4893-8D28-208E8F35FFD9}
+		{F38F56CC-98CB-4653-91D4-21EF7A9EBA8A} = {BCA3516E-3094-4281-8292-A8BD4EBB5CE2}
+	EndGlobalSection
+EndGlobal

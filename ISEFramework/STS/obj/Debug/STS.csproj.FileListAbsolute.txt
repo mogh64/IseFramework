@@ -1,0 +1,5 @@
+E:\ISECollection\ISEFramework\STSRelease\STS.dll
+E:\ISECollection\ISEFramework\STSRelease\STS.pdb
+E:\ISECollection\ISEFramework\STS\obj\Debug\STS.csprojResolveAssemblyReference.cache
+E:\ISECollection\ISEFramework\STS\obj\Debug\STS.dll
+E:\ISECollection\ISEFramework\STS\obj\Debug\STS.pdb

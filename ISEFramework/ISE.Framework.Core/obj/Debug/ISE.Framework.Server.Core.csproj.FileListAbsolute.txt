@@ -1,0 +1,10 @@
+E:\ISECollection\ISEFramework\Release\Framework\ISE.Framework.Server.Core.dll
+E:\ISECollection\ISEFramework\Release\Framework\ISE.Framework.Server.Core.pdb
+E:\ISECollection\ISEFramework\ISE.Framework.Core\obj\Debug\ISE.Framework.Server.Core.dll
+E:\ISECollection\ISEFramework\ISE.Framework.Core\obj\Debug\ISE.Framework.Server.Core.pdb
+E:\ISECollection\ISEFramework\ISE.Framework.Core\obj\Debug\ISE.Framework.Server.Core.csprojResolveAssemblyReference.cache
+\\i44741\e$\ISECollection\ISEFramework\Release\Framework\ISE.Framework.Server.Core.dll
+\\i44741\e$\ISECollection\ISEFramework\Release\Framework\ISE.Framework.Server.Core.pdb
+\\i44741\e$\ISECollection\ISEFramework\ISE.Framework.Core\obj\Debug\ISE.Framework.Server.Core.csprojResolveAssemblyReference.cache
+\\i44741\e$\ISECollection\ISEFramework\ISE.Framework.Core\obj\Debug\ISE.Framework.Server.Core.dll
+\\i44741\e$\ISECollection\ISEFramework\ISE.Framework.Core\obj\Debug\ISE.Framework.Server.Core.pdb

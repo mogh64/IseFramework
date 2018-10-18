@@ -1,0 +1,5 @@
+E:\ISECollection\ISEFramework\Release\Framework\SLF.Log4netFacade.dll
+E:\ISECollection\ISEFramework\Release\Framework\SLF.Log4netFacade.pdb
+E:\ISECollection\ISEFramework\LoggerFacades\SLF.Log4netFacade\obj\Debug\SLF.Log4netFacade.csprojResolveAssemblyReference.cache
+E:\ISECollection\ISEFramework\LoggerFacades\SLF.Log4netFacade\obj\Debug\SLF.Log4netFacade.dll
+E:\ISECollection\ISEFramework\LoggerFacades\SLF.Log4netFacade\obj\Debug\SLF.Log4netFacade.pdb

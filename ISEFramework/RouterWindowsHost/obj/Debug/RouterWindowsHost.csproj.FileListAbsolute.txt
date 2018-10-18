@@ -1,0 +1,8 @@
+E:\ISECollection\ISEFramework\RouterWindowsHost\obj\Debug\RouterWindowsHost.csprojResolveAssemblyReference.cache
+E:\ISECollection\ISEFramework\RouterRelease\RouterWindowsHost.exe.config
+E:\ISECollection\ISEFramework\RouterRelease\RouterWindowsHost.exe
+E:\ISECollection\ISEFramework\RouterRelease\RouterWindowsHost.pdb
+E:\ISECollection\ISEFramework\RouterWindowsHost\obj\Debug\RouterWindowsHost.exe
+E:\ISECollection\ISEFramework\RouterWindowsHost\obj\Debug\RouterWindowsHost.pdb
+E:\ISECollection\ISEFramework\RouterWindowsHost\obj\Debug\RouterWindowsHost.ProjectInstaller.resources
+E:\ISECollection\ISEFramework\RouterWindowsHost\obj\Debug\RouterWindowsHost.csproj.GenerateResource.Cache

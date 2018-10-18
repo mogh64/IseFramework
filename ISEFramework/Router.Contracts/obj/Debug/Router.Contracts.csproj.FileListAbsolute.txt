@@ -1,0 +1,4 @@
+E:\ISECollection\ISEFramework\RouterRelease\Router.Contracts.dll
+E:\ISECollection\ISEFramework\Router.Contracts\obj\Debug\Router.Contracts.dll
+E:\ISECollection\ISEFramework\Router.Contracts\obj\Debug\Router.Contracts.pdb
+E:\ISECollection\ISEFramework\RouterRelease\Router.Contracts.pdb

@@ -1,0 +1,5 @@
+E:\ISECollection\ISEFramework\Release\Framework\SLF.dll
+E:\ISECollection\ISEFramework\Release\Framework\SLF.pdb
+E:\ISECollection\ISEFramework\SLF\obj\Debug\SLF.dll
+E:\ISECollection\ISEFramework\SLF\obj\Debug\SLF.pdb
+E:\ISECollection\ISEFramework\SLF\obj\Debug\SLF.csprojResolveAssemblyReference.cache

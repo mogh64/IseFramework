@@ -1,0 +1,46 @@
+﻿Installing assembly 'E:\ISECollection\ISEFramework\RouterRelease\RouterWindowsHost.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\ISECollection\ISEFramework\RouterRelease\RouterWindowsHost.InstallLog
+   assemblypath = E:\ISECollection\ISEFramework\RouterRelease\RouterWindowsHost.exe
+Rolling back assembly 'E:\ISECollection\ISEFramework\RouterRelease\RouterWindowsHost.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\ISECollection\ISEFramework\RouterRelease\RouterWindowsHost.InstallLog
+   assemblypath = E:\ISECollection\ISEFramework\RouterRelease\RouterWindowsHost.exe
+Installing assembly 'E:\ISECollection\ISEFramework\RouterRelease\RouterWindowsHost.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\ISECollection\ISEFramework\RouterRelease\RouterWindowsHost.InstallLog
+   assemblypath = E:\ISECollection\ISEFramework\RouterRelease\RouterWindowsHost.exe
+Installing service RouterWindowsService...
+Creating EventLog source RouterWindowsService in log Application...
+Rolling back assembly 'E:\ISECollection\ISEFramework\RouterRelease\RouterWindowsHost.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\ISECollection\ISEFramework\RouterRelease\RouterWindowsHost.InstallLog
+   assemblypath = E:\ISECollection\ISEFramework\RouterRelease\RouterWindowsHost.exe
+Restoring event log to previous state for source RouterWindowsService.
+Installing assembly 'E:\ISECollection\ISEFramework\RouterRelease\RouterWindowsHost.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\ISECollection\ISEFramework\RouterRelease\RouterWindowsHost.InstallLog
+   assemblypath = E:\ISECollection\ISEFramework\RouterRelease\RouterWindowsHost.exe
+Rolling back assembly 'E:\ISECollection\ISEFramework\RouterRelease\RouterWindowsHost.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\ISECollection\ISEFramework\RouterRelease\RouterWindowsHost.InstallLog
+   assemblypath = E:\ISECollection\ISEFramework\RouterRelease\RouterWindowsHost.exe
+Installing assembly 'E:\ISECollection\ISEFramework\RouterRelease\RouterWindowsHost.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\ISECollection\ISEFramework\RouterRelease\RouterWindowsHost.InstallLog
+   assemblypath = E:\ISECollection\ISEFramework\RouterRelease\RouterWindowsHost.exe
+Installing service RouterWindowsService...
+Service RouterWindowsService has been successfully installed.
+Creating EventLog source RouterWindowsService in log Application...
+Committing assembly 'E:\ISECollection\ISEFramework\RouterRelease\RouterWindowsHost.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\ISECollection\ISEFramework\RouterRelease\RouterWindowsHost.InstallLog
+   assemblypath = E:\ISECollection\ISEFramework\RouterRelease\RouterWindowsHost.exe

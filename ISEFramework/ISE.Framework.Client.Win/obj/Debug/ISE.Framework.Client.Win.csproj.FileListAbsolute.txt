@@ -1,0 +1,8 @@
+E:\ISECollection\ISEFramework\Release\Framework\ISE.Framework.Client.Win.dll
+E:\ISECollection\ISEFramework\Release\Framework\ISE.Framework.Client.Win.pdb
+E:\ISECollection\ISEFramework\ISE.Framework.Client.Win\obj\Debug\ISE.Framework.Client.Win.csprojResolveAssemblyReference.cache
+E:\ISECollection\ISEFramework\ISE.Framework.Client.Win\obj\Debug\ISE.Framework.Client.Win.Selector.UCItemListSelect.resources
+E:\ISECollection\ISEFramework\ISE.Framework.Client.Win\obj\Debug\ISE.Framework.Client.Win.csproj.GenerateResource.Cache
+E:\ISECollection\ISEFramework\ISE.Framework.Client.Win\obj\Debug\ISE.Framework.Client.Win.dll.licenses
+E:\ISECollection\ISEFramework\ISE.Framework.Client.Win\obj\Debug\ISE.Framework.Client.Win.dll
+E:\ISECollection\ISEFramework\ISE.Framework.Client.Win\obj\Debug\ISE.Framework.Client.Win.pdb

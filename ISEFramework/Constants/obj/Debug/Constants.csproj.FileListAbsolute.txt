@@ -1,0 +1,5 @@
+E:\ISECollection\ISEFramework\STSRelease\Constants.dll
+E:\ISECollection\ISEFramework\STSRelease\Constants.pdb
+E:\ISECollection\ISEFramework\Constants\obj\Debug\Constants.dll
+E:\ISECollection\ISEFramework\Constants\obj\Debug\Constants.pdb
+E:\ISECollection\ISEFramework\Constants\obj\Debug\Constants.csprojResolveAssemblyReference.cache

@@ -1,0 +1,5 @@
+E:\ISECollection\ISEFramework\Release\Framework\ISE.Framework.Client.Web.dll
+E:\ISECollection\ISEFramework\Release\Framework\ISE.Framework.Client.Web.pdb
+E:\ISECollection\ISEFramework\ISE.Framework.Client.Web\obj\Debug\ISE.Framework.Client.Web.dll
+E:\ISECollection\ISEFramework\ISE.Framework.Client.Web\obj\Debug\ISE.Framework.Client.Web.pdb
+E:\ISECollection\ISEFramework\ISE.Framework.Client.Web\obj\Debug\ISE.Framework.Client.Web.csprojResolveAssemblyReference.cache
